@@ -18,7 +18,6 @@ namespace Bank.Forms
 		public frmLogin()
 		{
 			InitializeComponent();
-			base.Refresh();
 			pbStar.Visible = false;
 		}
 
