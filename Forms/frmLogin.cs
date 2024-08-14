@@ -34,7 +34,7 @@ namespace Bank.Forms
 			errLogin.Icon = SystemIcons.Error;
 			ErrCapsLock = new ErrorProvider();
 			
-			chkRemmember.Parent = lnkMadeBy.Parent = pbBackGraghics;
+			//chkRemmember.Parent = lnkMadeBy.Parent = pbBackGraghics;
 			txtUsername.Refresh();
 			lnkMadeBy.BackColor = Color.Transparent;
 
@@ -43,7 +43,7 @@ namespace Bank.Forms
 
 		private void tLogin_Tick(object sender, EventArgs e)
 		{
-			pbBackGraghics.Image = Resources.Bank_Login_Fixed;
+			pbBackGraghics.Hide();
 			tLogin.Stop();
 			
 		}
@@ -52,6 +52,7 @@ namespace Bank.Forms
 		{
 
 			txtUsername.Show();
+			txtPassword.Show();
 			chkRemmember.Show();
 			btnLogin.Show();
 			lnkMadeBy.Show();

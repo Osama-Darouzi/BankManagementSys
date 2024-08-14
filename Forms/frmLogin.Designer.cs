@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            Guna.UI2.WinForms.Suite.TextBoxState textBoxState2 = new Guna.UI2.WinForms.Suite.TextBoxState();
-            Guna.UI2.WinForms.Suite.TextBoxState textBoxState1 = new Guna.UI2.WinForms.Suite.TextBoxState();
+            Guna.UI2.WinForms.Suite.TextBoxState textBoxState7 = new Guna.UI2.WinForms.Suite.TextBoxState();
+            Guna.UI2.WinForms.Suite.TextBoxState textBoxState8 = new Guna.UI2.WinForms.Suite.TextBoxState();
             this.tLogin = new System.Windows.Forms.Timer(this.components);
             this.chkRemmember = new System.Windows.Forms.CheckBox();
             this.tControlsShow = new System.Windows.Forms.Timer(this.components);
@@ -66,16 +66,17 @@
             // 
             // pbProPic
             // 
-            this.pbProPic.Location = new System.Drawing.Point(10, 0);
+            this.pbProPic.Location = new System.Drawing.Point(-206, 0);
             // 
             // lnkUsername
             // 
-            this.lnkUsername.Location = new System.Drawing.Point(10, 26);
+            this.lnkUsername.Location = new System.Drawing.Point(-206, 26);
             // 
             // lblTime
             // 
-            this.lblTime.Location = new System.Drawing.Point(207, 8);
-            this.lblTime.Text = "6:08 PM";
+            this.lblTime.Font = new System.Drawing.Font("Digital-7 Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Location = new System.Drawing.Point(222, 8);
+            this.lblTime.Size = new System.Drawing.Size(57, 17);
             // 
             // tLogin
             // 
@@ -101,7 +102,7 @@
             // 
             // tControlsShow
             // 
-            this.tControlsShow.Interval = 750;
+            this.tControlsShow.Interval = 1000;
             this.tControlsShow.Tick += new System.EventHandler(this.tControlsShow_Tick);
             // 
             // btnLogin
@@ -150,8 +151,8 @@
             // txtUsername
             // 
             this.txtUsername.BackColor = System.Drawing.Color.Transparent;
-            textBoxState2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUsername.FocusedState = textBoxState2;
+            textBoxState7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtUsername.FocusedState = textBoxState7;
             this.txtUsername.ForeColor = System.Drawing.Color.Transparent;
             this.txtUsername.HName = "Username";
             this.txtUsername.Location = new System.Drawing.Point(84, 91);
@@ -161,12 +162,13 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(200, 56);
             this.txtUsername.TabIndex = 11;
+            this.txtUsername.Visible = false;
             // 
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.Transparent;
-            textBoxState1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPassword.FocusedState = textBoxState1;
+            textBoxState8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPassword.FocusedState = textBoxState8;
             this.txtPassword.HName = "Password";
             this.txtPassword.Location = new System.Drawing.Point(84, 168);
             this.txtPassword.Max = ((short)(100));
@@ -175,6 +177,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(200, 56);
             this.txtPassword.TabIndex = 12;
+            this.txtPassword.Visible = false;
             // 
             // frmLogin
             // 
