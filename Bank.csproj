@@ -46,6 +46,10 @@
     <Reference Include="MyUC">
       <HintPath>..\MyUC\bin\Debug\MyUC.dll</HintPath>
     </Reference>
+    <Reference Include="MyUtils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MyUtils\bin\Debug\MyUtils.dll</HintPath>
+    </Reference>
     <Reference Include="ObjectListView, Version=2.7.1.31255, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL">
       <HintPath>packages\ObjectListView.2.7.1.5\lib\ObjectListView.dll</HintPath>
     </Reference>
