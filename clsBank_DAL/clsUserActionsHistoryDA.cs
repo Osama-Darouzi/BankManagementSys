@@ -36,7 +36,7 @@ namespace BankDAL
 
         private static SqlConnection _Connection = new SqlConnection(_ConnectionString);
 
-        private static string _ExceptionLog = @"D:\Projects\clsBank_DAL\Exception_File.txt";
+        private static string _ExceptionLog = @"D:\Projects\Bank\clsBank_DAL\Exception_File.txt";
 
         private static string _TableName = "UsersActionsHistory";
 
