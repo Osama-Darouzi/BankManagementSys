@@ -68,6 +68,7 @@
             // lblTime
             // 
             this.lblTime.Location = new System.Drawing.Point(838, 8);
+            this.lblTime.Text = "7:40 AM";
             // 
             // lblUsername
             // 

@@ -33,8 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BankBusinessLayer">
-      <HintPath>..\BankBusinessLayer\bin\Debug\BankBusinessLayer.dll</HintPath>
+    <Reference Include="BankBusinessLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>BankBusinessLayer\bin\Debug\BankBusinessLayer.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

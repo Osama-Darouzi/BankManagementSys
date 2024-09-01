@@ -12,19 +12,19 @@ namespace BankDAL
 {
     public static class clsLoginRegistryDA
     {
-        private static void _SetValues(SqlCommand cmd,int UserID, string Username, short Permissions)
+        private static void _SetValues(SqlCommand cmd,int UserID, string Username, int Permissions)
         {
             cmd.Parameters.AddWithValue("@UserID", UserID);
             cmd.Parameters.AddWithValue("@Username", Username);
             cmd.Parameters.AddWithValue("@Permissions", Permissions);
         }
 
-        private static void _GetValues(SqlDataReader reader, ref int UserID, ref string Username, ref short Permissions, ref DateTime LoginDate)
+        private static void _GetValues(SqlDataReader reader, ref int UserID, ref string Username, ref int Permissions, ref DateTime LoginDate)
         {
             UserID = (int)reader["UserID"];
             Username = reader["Username"].ToString();
             LoginDate = (DateTime)reader["LoginDate"];
-            Permissions = (short)reader["Permissions"];
+            Permissions = (int)reader["Permissions"];
         }
 
         private static string _ConnectionString = clsGenerals_ADO.GetConnectionString("Bank");
@@ -37,7 +37,7 @@ namespace BankDAL
 
         private static string _PK = "LoginID";
 
-        public static int AddNewWith(int UserID, string Username, short Permissions)
+        public static int AddNewWith(int UserID, string Username, int Permissions)
         {
             int LoginID = -1;
 
@@ -71,7 +71,7 @@ namespace BankDAL
             return LoginID;    
         }
 
-        public static bool GetByID(int UserID, ref int LoginID, ref string Username, ref short Permissions, ref DateTime LoginDate)
+        public static bool GetByID(int UserID, ref int LoginID, ref string Username, ref int Permissions, ref DateTime LoginDate)
         {
             bool IsFound = false;
 
@@ -109,7 +109,7 @@ namespace BankDAL
             return IsFound;
         }
 
-        public static bool GetByUsername(string Username, ref int LoginID, ref int UserID, ref short Permissions, ref DateTime LoginDate)
+        public static bool GetByUsername(string Username, ref int LoginID, ref int UserID, ref int Permissions, ref DateTime LoginDate)
         {
             bool IsFound = false;
 

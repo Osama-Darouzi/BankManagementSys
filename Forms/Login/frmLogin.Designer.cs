@@ -116,9 +116,8 @@
             // 
             this.txtUsername.BackColor = System.Drawing.Color.Transparent;
             textBoxState2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUsername.FocusedState = textBoxState2;
             this.txtUsername.ForeColor = System.Drawing.Color.Transparent;
-            this.txtUsername.HForeColor = System.Drawing.Color.White;
+            this.txtUsername.HeaderColor = System.Drawing.Color.White;
             this.txtUsername.HName = "Username";
             this.txtUsername.LengthLabelColor = System.Drawing.Color.Red;
             this.txtUsername.Location = new System.Drawing.Point(84, 134);
@@ -134,8 +133,7 @@
             // 
             this.txtPassword.BackColor = System.Drawing.Color.Transparent;
             textBoxState1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPassword.FocusedState = textBoxState1;
-            this.txtPassword.HForeColor = System.Drawing.Color.White;
+            this.txtPassword.HeaderColor = System.Drawing.Color.White;
             this.txtPassword.HName = "Password";
             this.txtPassword.LengthLabelColor = System.Drawing.Color.Red;
             this.txtPassword.Location = new System.Drawing.Point(84, 211);

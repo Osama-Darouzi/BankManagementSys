@@ -11,6 +11,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankDataAccessLayer", "clsBank_DAL\BankDataAccessLayer.csproj", "{5912D52C-A828-472E-AE6C-B827AAE48E3E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankBusinessLayer", "BankBusinessLayer\BankBusinessLayer.csproj", "{092EB8FA-BD2C-4F48-AAC6-F46A440FDCD0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5912D52C-A828-472E-AE6C-B827AAE48E3E} = {5912D52C-A828-472E-AE6C-B827AAE48E3E}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -11,7 +11,7 @@ namespace BankBusinessLayer
     public static class clsLoginRegister
     {
 
-        public static bool AddLogin(int UserID, string Username, short Permissions)
+        public static bool AddLogin(int UserID, string Username, int Permissions)
         {
             return clsLoginRegistryDA.AddNewWith(UserID, Username, Permissions) != -1;
         }
