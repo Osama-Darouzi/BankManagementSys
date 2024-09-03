@@ -81,15 +81,15 @@ namespace BankBusinessLayer
             _ObjPreparer();
         }
 
-        public clsClient(string firstName, string lastName, string email, string address, Image Pfp, string accountNumber, string pinCode, double balance)
-            : base(firstName, lastName, email, address, Pfp)
+        public clsClient(string firstName, string lastName, byte sex, string email, string address, Image Pfp, string accountNumber, string pinCode, double balance)
+            : base(firstName, lastName, sex, email, address, Pfp)
         {
             _Mode = enMode.AddNew;
             _ObjPreparer(-1, accountNumber, pinCode, balance);
         }
 
-        private clsClient(int ClientID, int PersonID, string firstName, string lastName, string email, string address, Image Pfp, string accountNumber, string pinCode, double balance) 
-            : base(PersonID, firstName, lastName, email, address, Pfp)
+        private clsClient(int ClientID, int PersonID, string firstName, string lastName, byte sex, string email, string address, Image Pfp, string accountNumber, string pinCode, double balance) 
+            : base(PersonID, firstName, lastName, sex, email, address, Pfp)
         {
             _Mode = enMode.Update;
             _ObjPreparer(ClientID, accountNumber, pinCode, balance);
@@ -121,13 +121,14 @@ namespace BankBusinessLayer
         {
             int PersonID = -1;
             double Balance = -1;
+            byte Sex = 0;
             string FirstName = "", LastName = "", Email = "", Address = "", ImagePath = "", AccountNumber = "", PinCode = "";
 
-            if (clsClientsDA.GetByID(ClientID, ref PersonID, ref FirstName, ref LastName, ref Email, ref Address, ref ImagePath
+            if (clsClientsDA.GetByID(ClientID, ref PersonID, ref FirstName, ref LastName, ref Sex, ref Email, ref Address, ref ImagePath
                 , ref AccountNumber, ref PinCode, ref Balance))
             {
                 Image Pfp = ImageHandler.GetImage(ImagePath);
-                return new clsClient(ClientID, PersonID, FirstName, LastName, Email, Address, Pfp, AccountNumber, PinCode, Balance);
+                return new clsClient(ClientID, PersonID, FirstName, LastName, Sex, Email, Address, Pfp, AccountNumber, PinCode, Balance);
             }
 
             return null;
@@ -137,13 +138,14 @@ namespace BankBusinessLayer
         {
             int ClientID = -1, PersonID = -1;
             double Balance = -1;
+            byte Sex = 0;
             string FirstName = "", LastName = "", Email = "", Address = "", ImagePath = "", PinCode = "";
 
-            if (clsClientsDA.GetByAccountNumber(AccountNumber, ref ClientID, ref PersonID, ref FirstName, ref LastName
+            if (clsClientsDA.GetByAccountNumber(AccountNumber, ref ClientID, ref PersonID, ref FirstName, ref LastName, ref Sex
                 , ref Email, ref Address, ref ImagePath, ref PinCode, ref Balance))
             {
                 Image Pfp = ImageHandler.GetImage(ImagePath);
-                return new clsClient(ClientID, PersonID, FirstName, LastName, Email, Address, Pfp, AccountNumber, PinCode, Balance);
+                return new clsClient(ClientID, PersonID, FirstName, LastName, Sex, Email, Address, Pfp, AccountNumber, PinCode, Balance);
             }
 
             return null;

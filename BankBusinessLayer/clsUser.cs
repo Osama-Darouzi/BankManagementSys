@@ -76,15 +76,15 @@ namespace BankBusinessLayer
             _ObjPreparer();
         }
 
-        public clsUser(string firstName, string lastName, string email, string address, Image Pfp, string username, string password, int permissions)
-            : base(firstName, lastName, email, address, Pfp)
+        public clsUser(string firstName, string lastName, byte sex, string email, string address, Image Pfp, string username, string password, int permissions)
+            : base(firstName, lastName, sex, email, address, Pfp)
         {
             _Mode = enMode.AddNew;
             _ObjPreparer(-1, username, password, permissions);
         }
 
-        private clsUser(int UserID, int PersonID, string firstName, string lastName, string email, string address, Image Pfp, string username, string password, int permissions) 
-            : base(PersonID, firstName, lastName, email, address, Pfp)
+        private clsUser(int UserID, int PersonID, string firstName, string lastName, byte sex, string email, string address, Image Pfp, string username, string password, int permissions) 
+            : base(PersonID, firstName, lastName, sex, email, address, Pfp)
         {
             _Mode = enMode.Update;
             _ObjPreparer(UserID, username, password, permissions);
@@ -116,13 +116,14 @@ namespace BankBusinessLayer
         {
             int PersonID = -1;
             int Permissions = -1;
+            byte Sex = 0;
             string FirstName = "", LastName = "", Email = "", Address = "", ImagePath = "", Username = "", Password = "";
 
-            if (clsUserDA.GetByID(UserID, ref PersonID, ref FirstName, ref LastName, ref Email, ref Address, ref ImagePath
+            if (clsUserDA.GetByID(UserID, ref PersonID, ref FirstName, ref LastName, ref Sex, ref Email, ref Address, ref ImagePath
                 , ref Username, ref Password, ref Permissions))
             {
                 Image Pfp = ImageHandler.GetImage(ImagePath);
-                return new clsUser(UserID, PersonID, FirstName, LastName, Email, Address, Pfp, Username, Password, Permissions);
+                return new clsUser(UserID, PersonID, FirstName, LastName, Sex, Email, Address, Pfp, Username, Password, Permissions);
             }
 
             return null;
@@ -132,13 +133,14 @@ namespace BankBusinessLayer
         {
             int UserID = -1, PersonID = -1;
             int Permissions = -1;
+            byte Sex = 0;
             string FirstName = "", LastName = "", Email = "", Address = "", ImagePath = "", Password = "";
 
-            if (clsUserDA.GetByUsername(Username, ref UserID, ref PersonID, ref FirstName, ref LastName, ref Email, ref Address, ref ImagePath
+            if (clsUserDA.GetByUsername(Username, ref UserID, ref PersonID, ref FirstName, ref LastName, ref Sex, ref Email, ref Address, ref ImagePath
                 , ref Password, ref Permissions))
             {
                 Image Pfp = ImageHandler.GetImage(ImagePath);
-                return new clsUser(UserID, PersonID, FirstName, LastName, Email, Address, Pfp, Username, Password, Permissions);
+                return new clsUser(UserID, PersonID, FirstName, LastName, Sex, Email, Address, Pfp, Username, Password, Permissions);
             }
 
             return null;

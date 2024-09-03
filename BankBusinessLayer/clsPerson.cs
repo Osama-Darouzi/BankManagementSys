@@ -15,6 +15,8 @@ namespace BankBusinessLayer
 
     public enum enRole{User, Client}
 
+    public enum enSex{Male = 1, Female}
+
     public class clsPhone
     {
         private enMode _Mode;
@@ -126,11 +128,16 @@ namespace BankBusinessLayer
 
     public abstract class clsPerson 
     {
+        public readonly static Color MALE_COLOR = Color.FromArgb(94, 148, 255);
+        public readonly static Color FEMALE_COLOR = Color.FromArgb(255, 128, 255);
+
         private enMode _Mode;
 
         private static string _AppImagesPath = AppGlobals.AppDataPath + @"\PFPS";
 
         protected int _PersonID = -1;
+
+        protected enSex _sex;
         
         protected string _ImagePath;
 
@@ -144,6 +151,14 @@ namespace BankBusinessLayer
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string FullName {get{ return FirstName + " " + LastName; } }
+        public enSex Sex
+        {
+            get { return _sex; }
+            set
+            {
+                _sex = value;
+            }
+        }
         public string Email { get; set; }
         public string Address { get; set; }
         public Image PImage
@@ -179,17 +194,21 @@ namespace BankBusinessLayer
                 ProfilePicChanged?.Invoke(value);
             }
         }
-
+        public bool HasImage { get{ return _PImage != null; } }
         public List<clsPhone> Phones { get; set; }
 
         public delegate void ProfilePicHandler(Image ProfileImage);
 
         public event ProfilePicHandler ProfilePicChanged;
 
+        public delegate void SexChangeHandler(enSex sex);
+
+        public event SexChangeHandler SexChanged;
+
         private bool _Add()
         {
 
-            _PersonID = clsPersonDA.AddNewWith(FirstName, LastName, Email, Address, _ImagePath);
+            _PersonID = clsPersonDA.AddNewWith(FirstName, LastName, (byte)Sex, Email, Address, _ImagePath);
             bool CreateState = _PersonID != -1 ;
 
             if (CreateState)
@@ -202,7 +221,7 @@ namespace BankBusinessLayer
 
         private bool _Update()
         {
-            bool UpdateState = clsPersonDA.UpdateByID(PersonID, FirstName, LastName, Email, Address, _ImagePath);
+            bool UpdateState = clsPersonDA.UpdateByID(PersonID, FirstName, LastName, (byte)Sex, Email, Address, _ImagePath);
 
             if (UpdateState)
             {
@@ -234,11 +253,12 @@ namespace BankBusinessLayer
             return true;
         }
 
-        private void _ObjPreparer(int ID = -1, string FirstName = "", string LastName = "", string Email = "", string Address = "", Image Pfp = null)
+        private void _ObjPreparer(int ID = -1, string FirstName = "", string LastName = "", byte Sex = 0, string Email = "", string Address = "", Image Pfp = null)
         {
             _PersonID = ID;
             this.FirstName = FirstName;
             this.LastName = LastName;
+            this.Sex = (enSex)Sex;
             this.Email = Email;
             this.Address = Address;
             this.PImage = Pfp;
@@ -260,18 +280,18 @@ namespace BankBusinessLayer
             _ObjPreparer();
         }
 
-        protected clsPerson(string firstName, string lastName, string email, string address, Image Pfp)
+        protected clsPerson(string firstName, string lastName, byte sex, string email, string address, Image Pfp)
         {
             _Mode = enMode.AddNew;
             
-            _ObjPreparer(-1, firstName, lastName, email, address, Pfp);
+            _ObjPreparer(-1, firstName, lastName, sex, email, address, Pfp);
         }
 
-        protected clsPerson( int iD, string firstName, string lastName, string email,string address, Image Pfp)
+        protected clsPerson( int iD, string firstName, string lastName, byte sex, string email,string address, Image Pfp)
         {
             _Mode = enMode.Update;
             
-            _ObjPreparer(iD, firstName, lastName, email, address, Pfp);
+            _ObjPreparer(iD, firstName, lastName, sex, email, address, Pfp);
         }
 
         public clsPhone AddPhone(string PhoneNumber)
@@ -332,6 +352,11 @@ namespace BankBusinessLayer
             return SaveState;
         }
 
+        public string GetSex()
+        {
+            return Sex.ToString();
+        }
+
         public static enRole GetRole(int PersonID)
         {
             if (clsUserDA.DoesExistByPersonID(PersonID))
@@ -341,6 +366,7 @@ namespace BankBusinessLayer
 
             return enRole.Client;
         }
+
 
 
         //public void Find(int PersonID)
