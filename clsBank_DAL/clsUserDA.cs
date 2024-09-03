@@ -75,7 +75,7 @@ namespace BankDAL
             return UserID;    
         }
 
-        public static bool GetByID(int UserID, ref int PersonID, ref string FirstName, ref string LastName, byte Sex,
+        public static bool GetByID(int UserID, ref int PersonID, ref string FirstName, ref string LastName, ref byte Sex,
             ref string Email,ref string Address, ref string ImagePath, ref string Username, ref string Password, ref int Permissions)
         {
             bool IsFound = false;
