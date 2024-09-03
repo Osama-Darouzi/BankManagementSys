@@ -21,11 +21,11 @@ namespace BankDAL
             cmd.Parameters.AddWithValue("@Balance", Balance);
         }
 
-        private static void _GetValues(SqlDataReader reader, ref int PersonID, ref string FirstName, ref string LastName, ref byte Sex
+        private static void _GetValues(SqlDataReader reader, ref int PersonID, ref string FirstName, ref string LastName, ref byte SexID
             , ref string Email, ref string Address, ref string ImagePath, ref string AccountNumber, ref string PinCode, ref double Balance)
         {
             PersonID = (int)reader["PersonID"];
-            clsPersonDA._GetValues(reader, ref FirstName, ref LastName, ref Sex, ref Email, ref Address, ref ImagePath);
+            clsPersonDA._GetValues(reader, ref FirstName, ref LastName, ref SexID, ref Email, ref Address, ref ImagePath);
             AccountNumber = reader["AccountNumber"].ToString();
             PinCode = reader["PinCode"].ToString();
             Balance = (double)reader["Balance"];
@@ -75,7 +75,7 @@ namespace BankDAL
             return ClientID;    
         }
 
-        public static bool GetByID(int ClientID, ref int PersonID, ref string FirstName, ref string LastName, ref byte Sex
+        public static bool GetByID(int ClientID, ref int PersonID, ref string FirstName, ref string LastName, ref byte SexID
             , ref string Email, ref string Address, ref string ImagePath, ref string AccountNumber, ref string PinCode, ref double Balance)
         {
             bool IsFound = false;
@@ -95,7 +95,7 @@ namespace BankDAL
                 if (reader.Read())
                 {
                     IsFound = true;
-                    _GetValues(reader, ref PersonID, ref FirstName, ref LastName, ref Sex, ref Email, ref Address, ref ImagePath, ref AccountNumber, ref PinCode, ref Balance);
+                    _GetValues(reader, ref PersonID, ref FirstName, ref LastName, ref SexID, ref Email, ref Address, ref ImagePath, ref AccountNumber, ref PinCode, ref Balance);
                 }
 
                 reader.Close();
@@ -113,7 +113,7 @@ namespace BankDAL
             return IsFound;
         }
 
-        public static bool GetByAccountNumber(string AccountNumber, ref int ClientID, ref int PersonID, ref string FirstName, ref string LastName, ref byte Sex 
+        public static bool GetByAccountNumber(string AccountNumber, ref int ClientID, ref int PersonID, ref string FirstName, ref string LastName, ref byte SexID 
             , ref string Email, ref string Address, ref string ImagePath, ref string PinCode, ref double Balance)
         {
             bool IsFound = false;
@@ -134,7 +134,7 @@ namespace BankDAL
                 {
                     IsFound = true;
                     ClientID = (int)reader["ClientID"];
-                    _GetValues(reader, ref PersonID, ref FirstName, ref LastName, ref Sex, ref Email, ref Address, ref ImagePath, ref AccountNumber, ref PinCode, ref Balance);
+                    _GetValues(reader, ref PersonID, ref FirstName, ref LastName, ref SexID, ref Email, ref Address, ref ImagePath, ref AccountNumber, ref PinCode, ref Balance);
                 }
 
                 reader.Close();

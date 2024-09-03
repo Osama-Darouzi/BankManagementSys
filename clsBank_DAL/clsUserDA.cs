@@ -21,11 +21,11 @@ namespace BankDAL
             cmd.Parameters.AddWithValue("@Permissions", Permissions);
         }
 
-        private static void _GetValues(SqlDataReader reader, ref int PersonID, ref string FirstName, ref string LastName,ref byte Sex
+        private static void _GetValues(SqlDataReader reader, ref int PersonID, ref string FirstName, ref string LastName,ref byte SexID
             , ref string Email,ref string Address, ref string ImagePath, ref string Username, ref string Password, ref int Permissions)
         {
             PersonID = (int)reader["PersonID"];
-            clsPersonDA._GetValues(reader, ref FirstName, ref LastName, ref Sex, ref Email, ref Address, ref ImagePath);
+            clsPersonDA._GetValues(reader, ref FirstName, ref LastName, ref SexID, ref Email, ref Address, ref ImagePath);
             Username = reader["Username"].ToString();
             Password = reader["Password"].ToString();
             Permissions = (int)reader["Permissions"];
@@ -75,7 +75,7 @@ namespace BankDAL
             return UserID;    
         }
 
-        public static bool GetByID(int UserID, ref int PersonID, ref string FirstName, ref string LastName, ref byte Sex,
+        public static bool GetByID(int UserID, ref int PersonID, ref string FirstName, ref string LastName, ref byte SexID,
             ref string Email,ref string Address, ref string ImagePath, ref string Username, ref string Password, ref int Permissions)
         {
             bool IsFound = false;
@@ -95,7 +95,7 @@ namespace BankDAL
                 if (reader.Read())
                 {
                     IsFound = true;
-                    _GetValues(reader, ref PersonID, ref FirstName, ref LastName, ref Sex, ref Email,ref Address, ref ImagePath, ref Username, ref Password, ref Permissions);
+                    _GetValues(reader, ref PersonID, ref FirstName, ref LastName, ref SexID, ref Email,ref Address, ref ImagePath, ref Username, ref Password, ref Permissions);
                 }
 
                 reader.Close();
@@ -114,7 +114,7 @@ namespace BankDAL
         }
 
         public static bool GetByUsername(string Username, ref int UserID, ref int PersonID, ref string FirstName, ref string LastName,
-           ref byte Sex, ref string Email, ref string Address, ref string ImagePath, ref string Password, ref int Permissions)
+           ref byte SexID, ref string Email, ref string Address, ref string ImagePath, ref string Password, ref int Permissions)
         {
             bool IsFound = false;
 
@@ -134,7 +134,7 @@ namespace BankDAL
                 {
                     IsFound = true;
                     UserID = (int)reader["UserID"];
-                    _GetValues(reader, ref PersonID, ref FirstName, ref LastName, ref Sex, ref Email, ref Address, ref ImagePath, ref Username, ref Password, ref Permissions);
+                    _GetValues(reader, ref PersonID, ref FirstName, ref LastName, ref SexID, ref Email, ref Address, ref ImagePath, ref Username, ref Password, ref Permissions);
                 }
 
                 reader.Close();
