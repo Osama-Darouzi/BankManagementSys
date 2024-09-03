@@ -17,19 +17,19 @@ namespace BankBusinessLayer
         AddNewClient = 1 << 2,
         UpdateClient = 1 << 3,
         DeleteClient = 1 << 4,
-        TransferBalances = 1 << 5,
 
-        ShowTransferLog = 1 << 6,
-        ShowClientsActionsLog = 1 << 7,
-        LoginRegister = 1 << 8,
-        ShowUsersActionsLog = 1 << 9,
-        DeleteHistoryRecords = 1 << 10,
+        ShowTransferLog = 1 << 5,
+        ShowClientsActionsLog = 1 << 6,
+        LoginRegister = 1 << 7,
+        ShowUsersActionsLog = 1 << 8,
+        DeleteHistoryRecords = 1 << 9,
 
-        ManageUsers = 1 << 11,
-        ShowUsersList = 1 << 12 ,
-        AddNewUser = 1 << 13,
-        UpdateUser = 1 << 14,
-        DeleteUser = 1 << 15,
+        ManageUsers = 1 << 10,
+        ShowUsersList = 1 << 11,
+        AddNewUser = 1 << 12,
+        UpdateUser = 1 << 13,
+        DeleteUser = 1 << 14,
+        TransferBalances = 1 << 15,
         
     }
 
