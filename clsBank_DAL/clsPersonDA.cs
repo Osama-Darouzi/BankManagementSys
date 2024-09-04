@@ -44,8 +44,8 @@ namespace BankDAL
         {
             int PersonID = -1;
 
-            string query = $@"INSERT INTO {_TableName}
-                             VALUES(@FirstName, @LastName, @SexID, @Email, @ImagePath)
+            string query = $@"INSERT INTO {_TableName} (FirstName, LastName, SexID, Email, Address, ImagePath)
+                             VALUES(@FirstName, @LastName, @SexID, @Email, @Address, @ImagePath)
                              SELECT SCOPE_IDENTITY()";
 
             SqlCommand cmd = new SqlCommand(query, _Connection);
