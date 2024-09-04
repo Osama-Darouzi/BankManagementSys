@@ -61,7 +61,7 @@ namespace BankBusinessLayer
             return clsUserDA.UpdateByID(_UserID,  Username, Password, Permissions);
         }
 
-        protected void _ObjPreparer(int UserID = -1, string Username = "", string Password = "", int Permissions = -1)
+        protected void _ObjPreparer(int UserID = -1, string Username = "", string Password = "", int Permissions = 0)
         {
 
             _UserID = UserID;
@@ -115,7 +115,7 @@ namespace BankBusinessLayer
         public static clsUser Find(int UserID)
         {
             int PersonID = -1;
-            int Permissions = -1;
+            int Permissions = 0;
             byte Sex = 0;
             string FirstName = "", LastName = "", Email = "", Address = "", ImagePath = "", Username = "", Password = "";
 
@@ -132,7 +132,7 @@ namespace BankBusinessLayer
         public static clsUser Find(string Username)
         {
             int UserID = -1, PersonID = -1;
-            int Permissions = -1;
+            int Permissions = 0;
             byte Sex = 0;
             string FirstName = "", LastName = "", Email = "", Address = "", ImagePath = "", Password = "";
 
