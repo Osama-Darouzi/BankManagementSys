@@ -146,6 +146,7 @@ namespace BankBusinessLayer
 
         private bool _IsImageModified = false;
 
+        protected enRole _Role { get; set; }
 
         public int PersonID { get { return _PersonID; } }
 
@@ -268,7 +269,7 @@ namespace BankBusinessLayer
             return true;
         }
 
-        private void _ObjPreparer(int ID = -1, string FirstName = "", string LastName = "", byte Sex = 0, string Email = "", string Address = "", Image Pfp = null)
+        private void _ObjPreparer(enRole role, int ID = -1, string FirstName = "", string LastName = "", byte Sex = 1, string Email = "", string Address = "", Image Pfp = null)
         {
             _PersonID = ID;
             this.FirstName = FirstName;
@@ -277,6 +278,7 @@ namespace BankBusinessLayer
             this.Email = Email;
             this.Address = Address;
             this.PImage = Pfp;
+            _Role = role;
 
             if (ID == -1)
                 Phones = new List<clsPhone>();
@@ -289,24 +291,24 @@ namespace BankBusinessLayer
             if(!Directory.Exists(_AppImagesPath)) Directory.CreateDirectory(_AppImagesPath);
         }
 
-        protected clsPerson()
+        protected clsPerson(enRole role)
         {
             _Mode = enMode.AddNew;
-            _ObjPreparer();
+            _ObjPreparer(role);
         }
 
-        protected clsPerson(string firstName, string lastName, byte sex, string email, string address, Image Pfp)
+        protected clsPerson(enRole role, string firstName, string lastName, byte sex, string email, string address, Image Pfp)
         {
             _Mode = enMode.AddNew;
             
-            _ObjPreparer(-1, firstName, lastName, sex, email, address, Pfp);
+            _ObjPreparer(role, -1, firstName, lastName, sex, email, address, Pfp);
         }
 
-        protected clsPerson( int iD, string firstName, string lastName, byte sex, string email,string address, Image Pfp)
+        protected clsPerson(enRole role, int iD, string firstName, string lastName, byte sex, string email,string address, Image Pfp)
         {
             _Mode = enMode.Update;
             
-            _ObjPreparer(iD, firstName, lastName, sex, email, address, Pfp);
+            _ObjPreparer(role, iD, firstName, lastName, sex, email, address, Pfp);
         }
 
         public clsPhone AddPhone(string PhoneNumber)
@@ -370,16 +372,6 @@ namespace BankBusinessLayer
         public string GetSex()
         {
             return Sex.ToString();
-        }
-
-        public static enRole GetRole(int PersonID)
-        {
-            if (clsUserDA.DoesExistByPersonID(PersonID))
-            {
-                return enRole.User;
-            }
-
-            return enRole.Client;
         }
 
 

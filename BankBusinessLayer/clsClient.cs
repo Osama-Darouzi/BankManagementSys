@@ -75,21 +75,21 @@ namespace BankBusinessLayer
             _Balance = Balance;
         }
 
-        public clsClient() : base()
+        public clsClient() : base(enRole.Client)
         {
             _Mode = enMode.AddNew;
             _ObjPreparer();
         }
 
         public clsClient(string firstName, string lastName, byte sex, string email, string address, Image Pfp, string accountNumber, string pinCode, double balance)
-            : base(firstName, lastName, sex, email, address, Pfp)
+            : base(enRole.Client, firstName, lastName, sex, email, address, Pfp)
         {
             _Mode = enMode.AddNew;
             _ObjPreparer(-1, accountNumber, pinCode, balance);
         }
 
         private clsClient(int ClientID, int PersonID, string firstName, string lastName, byte sex, string email, string address, Image Pfp, string accountNumber, string pinCode, double balance) 
-            : base(PersonID, firstName, lastName, sex, email, address, Pfp)
+            : base(enRole.Client, PersonID, firstName, lastName, sex, email, address, Pfp)
         {
             _Mode = enMode.Update;
             _ObjPreparer(ClientID, accountNumber, pinCode, balance);

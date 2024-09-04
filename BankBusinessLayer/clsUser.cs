@@ -70,21 +70,21 @@ namespace BankBusinessLayer
             this.Permissions = Permissions;
         }
 
-        public clsUser() : base()
+        public clsUser() : base(enRole.User)
         {
             _Mode = enMode.AddNew;
             _ObjPreparer();
         }
 
         public clsUser(string firstName, string lastName, byte sex, string email, string address, Image Pfp, string username, string password, int permissions)
-            : base(firstName, lastName, sex, email, address, Pfp)
+            : base(enRole.User, firstName, lastName, sex, email, address, Pfp)
         {
             _Mode = enMode.AddNew;
             _ObjPreparer(-1, username, password, permissions);
         }
 
         private clsUser(int UserID, int PersonID, string firstName, string lastName, byte sex, string email, string address, Image Pfp, string username, string password, int permissions) 
-            : base(PersonID, firstName, lastName, sex, email, address, Pfp)
+            : base(enRole.User, PersonID, firstName, lastName, sex, email, address, Pfp)
         {
             _Mode = enMode.Update;
             _ObjPreparer(UserID, username, password, permissions);
