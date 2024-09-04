@@ -1,4 +1,4 @@
-﻿using BankBusinessLayer.Properties;
+﻿using static BankBusinessLayer.Properties.Resources;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -8,6 +8,7 @@ using BankDAL;
 using System.IO;
 using System.Drawing.Imaging;
 using ImageProcessing;
+using BankBusinessLayer.Properties;
 
 namespace BankBusinessLayer
 {
@@ -167,13 +168,7 @@ namespace BankBusinessLayer
             {
                 if (_PImage == null)
                 {
-                    switch (GetRole(PersonID))
-                    {
-                        case enRole.User:
-                            return Resources._User;
-                        case enRole.Client:
-                            return Resources.Client;
-                    }
+                    return _DefaultImage();
                 }
 
                 return _PImage;
@@ -182,8 +177,10 @@ namespace BankBusinessLayer
             set
             {
                 _IsImageModified = true;
-                if (value == null)
+                Image Default = _DefaultImage();
+                if (value == null || value == Default)
                 {
+                    value = null;
                     _ImagePath = string.Empty;
                 }
                 else
@@ -205,6 +202,24 @@ namespace BankBusinessLayer
 
         public event SexChangeHandler SexChanged;
 
+        private Image _DefaultImage()
+        {
+            Image DefImage = null;
+            switch (GetRole(PersonID))
+            {
+                case enRole.User:
+                    if (Sex == enSex.Male)
+                        DefImage = ImgMaleUser;
+                    else DefImage = ImgFemaleUser;
+                    break;
+                case enRole.Client:
+                    if (Sex == enSex.Male)
+                        DefImage = ImgMaleClient;
+                    else DefImage = ImgFemaleClient;
+                    break;
+            }
+            return DefImage;
+        }
         private bool _Add()
         {
 
