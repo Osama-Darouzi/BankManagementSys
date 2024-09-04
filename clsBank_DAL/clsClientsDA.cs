@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Net;
+using System.Data.SqlTypes;
 
 namespace BankDAL
 {
@@ -28,7 +29,7 @@ namespace BankDAL
             clsPersonDA._GetValues(reader, ref FirstName, ref LastName, ref SexID, ref Email, ref Address, ref ImagePath);
             AccountNumber = reader["AccountNumber"].ToString();
             PinCode = reader["PinCode"].ToString();
-            Balance = (double)reader["Balance"];
+            Balance = (double)(decimal)reader["Balance"];
         }
 
         private static string _ConnectionString = clsGenerals_ADO.GetConnectionString("Bank");
@@ -81,7 +82,7 @@ namespace BankDAL
             bool IsFound = false;
 
             string query = $@"SELECT * FROM {_TableName} JOIN Persons on {_TableName}.PersonID = Persons.PersonID
-                            WHERE {_PK} = @{_PK} AND IsActive = 1";
+                            WHERE {_PK} = @{_PK} AND {_TableName}.IsActive = 1";
 
             SqlCommand cmd = new SqlCommand(query, _Connection);
 
@@ -119,7 +120,7 @@ namespace BankDAL
             bool IsFound = false;
 
             string query = $@"SELECT * FROM {_TableName} JOIN Persons on {_TableName}.PersonID = Persons.PersonID
-                            WHERE AccountNumber = @AccountNumber AND IsActive = 1";
+                            WHERE AccountNumber = @AccountNumber AND {_TableName}.IsActive = 1";
 
             SqlCommand cmd = new SqlCommand(query, _Connection);
 

@@ -121,8 +121,8 @@
             this.txtUsername.HName = "Username";
             this.txtUsername.LengthLabelColor = System.Drawing.Color.Red;
             this.txtUsername.Location = new System.Drawing.Point(84, 134);
-            this.txtUsername.Max = ((short)(50));
-            this.txtUsername.Min = ((short)(5));
+            this.txtUsername.Max = ((ushort)(50));
+            this.txtUsername.Min = ((ushort)(5));
             this.txtUsername.Mode = MyUC.ctrlFramedTextBox.enMode.Normal;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(200, 56);
@@ -137,8 +137,8 @@
             this.txtPassword.HName = "Password";
             this.txtPassword.LengthLabelColor = System.Drawing.Color.Red;
             this.txtPassword.Location = new System.Drawing.Point(84, 211);
-            this.txtPassword.Max = ((short)(50));
-            this.txtPassword.Min = ((short)(8));
+            this.txtPassword.Max = ((ushort)(50));
+            this.txtPassword.Min = ((ushort)(8));
             this.txtPassword.Mode = MyUC.ctrlFramedTextBox.enMode.Normal;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(200, 56);

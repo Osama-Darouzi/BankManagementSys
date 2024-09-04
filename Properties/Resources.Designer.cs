@@ -163,6 +163,16 @@ namespace Bank.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap People_Cruds {
+            get {
+                object obj = ResourceManager.GetObject("People_Cruds", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap save_user {
             get {
                 object obj = ResourceManager.GetObject("save_user", resourceCulture);
@@ -203,19 +213,9 @@ namespace Bank.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap user__3_ {
-            get {
-                object obj = ResourceManager.GetObject("user (3)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap user_management {
             get {
-                object obj = ResourceManager.GetObject("user-management", resourceCulture);
+                object obj = ResourceManager.GetObject("user_management", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

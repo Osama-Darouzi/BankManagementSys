@@ -139,13 +139,15 @@ namespace BankBusinessLayer
         protected int _PersonID = -1;
 
         protected enSex _sex;
-        
+
+
         protected string _ImagePath;
 
         protected Image _PImage;
 
         private bool _IsImageModified = false;
 
+        protected string _DatabaseImgPath {get{return } };
         protected enRole _Role { get; set; }
 
         public int PersonID { get { return _PersonID; } }
@@ -159,6 +161,7 @@ namespace BankBusinessLayer
             set
             {
                 _sex = value;
+                SexChanged?.Invoke(value);
             }
         }
         public string Email { get; set; }
@@ -186,7 +189,7 @@ namespace BankBusinessLayer
                 }
                 else
                 {
-                    _ImagePath = _AppImagesPath + $@"\{PersonID}HQ.{_PImage.RawFormat}";
+                    _ImagePath = _AppImagesPath + $@"\{PersonID}HQ{value.Tag.ToString()}";
                 }
                 _PImage = value;
                 ProfilePicChanged?.Invoke(value);
@@ -206,7 +209,7 @@ namespace BankBusinessLayer
         private Image _DefaultImage()
         {
             Image DefImage = null;
-            switch (GetRole(PersonID))
+            switch (_Role)
             {
                 case enRole.User:
                     if (Sex == enSex.Male)
@@ -277,7 +280,7 @@ namespace BankBusinessLayer
             this.Sex = (enSex)Sex;
             this.Email = Email;
             this.Address = Address;
-            this.PImage = Pfp;
+            this._PImage = Pfp;
             _Role = role;
 
             if (ID == -1)

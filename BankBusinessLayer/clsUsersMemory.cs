@@ -42,7 +42,7 @@ namespace BankBusinessLayer
         public static clsUser[] GetAllUsers()
         {
             DataTable Users = clsRememberedUsersDA.GetAllRemUsers();
-            if(Users == null || !Users.IsInitialized) return null;
+            if(Users == null) return null;
 
             clsUser[] LoggedUsers = new clsUser[Users.Rows.Count];
 

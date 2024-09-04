@@ -118,8 +118,9 @@ namespace BankDAL
             string query = $@"UPDATE {_TableName}
                              SET FirstName = @FirstName,
                              	LastName = @LastName,
-                                SexID = @SexID
+                                SexID = @SexID,
                              	Email = @Email,
+                                Address = @Address,
                                 ImagePath = @ImagePath
                              WHERE PersonID = @PersonID";
 

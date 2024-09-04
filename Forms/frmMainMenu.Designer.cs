@@ -53,8 +53,7 @@
             // 
             // pbStar
             // 
-            this.pbStar.Image = ((System.Drawing.Image)(resources.GetObject("pbStar.Image")));
-            this.pbStar.Location = new System.Drawing.Point(1, 1);
+            this.pbStar.Location = new System.Drawing.Point(0, 0);
             this.pbStar.Size = new System.Drawing.Size(94, 94);
             // 
             // pbProPic
@@ -68,7 +67,6 @@
             // lblTime
             // 
             this.lblTime.Location = new System.Drawing.Point(838, 8);
-            this.lblTime.Text = "7:40 AM";
             // 
             // lblUsername
             // 
@@ -89,7 +87,6 @@
             this.Separator.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line;
             this.Separator.Size = new System.Drawing.Size(888, 10);
             this.Separator.TabIndex = 12;
-            this.Separator.Text = "guna2Shapes1";
             this.Separator.Zoom = 100;
             // 
             // btnManageClients
@@ -126,7 +123,7 @@
             this.btnUsersActions.FillColor = System.Drawing.Color.Transparent;
             this.btnUsersActions.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsersActions.ForeColor = System.Drawing.Color.Black;
-            this.btnUsersActions.Image = global::Bank.Properties.Resources.user__3_;
+            this.btnUsersActions.Image = global::Bank.Properties.Resources.People_Cruds;
             this.btnUsersActions.ImageOffset = new System.Drawing.Point(0, 37);
             this.btnUsersActions.ImageSize = new System.Drawing.Size(150, 150);
             this.btnUsersActions.Location = new System.Drawing.Point(407, 363);
@@ -169,7 +166,7 @@
             this.btnManageUsers.FillColor = System.Drawing.Color.Transparent;
             this.btnManageUsers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageUsers.ForeColor = System.Drawing.Color.Black;
-            this.btnManageUsers.Image = global::Bank.Properties.Resources.user_management;
+            this.btnManageUsers.Image = ((System.Drawing.Image)(resources.GetObject("btnManageUsers.Image")));
             this.btnManageUsers.ImageOffset = new System.Drawing.Point(0, 37);
             this.btnManageUsers.ImageSize = new System.Drawing.Size(150, 150);
             this.btnManageUsers.Location = new System.Drawing.Point(63, 363);
@@ -236,7 +233,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(235)))));
             this.ClientSize = new System.Drawing.Size(1000, 600);
             this.Controls.Add(this.btnClientsTransfers);
             this.Controls.Add(this.btnClientsActions);
@@ -251,9 +247,8 @@
             this.Name = "frmMainMenu";
             this.RestoreButton = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmMainMenu";
+            this.Text = "ed";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMainMenu_FormClosed);
-            this.Controls.SetChildIndex(this.PnlHead, 0);
             this.Controls.SetChildIndex(this.Separator, 0);
             this.Controls.SetChildIndex(this.btnManageClients, 0);
             this.Controls.SetChildIndex(this.btnUsersActions, 0);
@@ -261,6 +256,7 @@
             this.Controls.SetChildIndex(this.btnManageUsers, 0);
             this.Controls.SetChildIndex(this.btnClientsActions, 0);
             this.Controls.SetChildIndex(this.btnClientsTransfers, 0);
+            this.Controls.SetChildIndex(this.PnlHead, 0);
             this.PnlHead.ResumeLayout(false);
             this.PnlHead.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStar)).EndInit();
