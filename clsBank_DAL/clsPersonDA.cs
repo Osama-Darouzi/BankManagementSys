@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
 using DGS;
@@ -225,6 +226,37 @@ namespace BankDAL
             return IsFound;
         }
 
-        
+        public static string GetImgPath(int PersonID)
+        {
+             string ImgPath = "";
+
+            string query = $@"SELECT ImagePath FROM {_TableName} WHERE PersonID = @PersonID AND IsActive = 1";
+
+            SqlCommand cmd = new SqlCommand(query, _Connection);
+
+            cmd.Parameters.AddWithValue("@PersonID", PersonID);
+
+            try
+            {
+                _Connection.Open();
+                object result = cmd.ExecuteScalar();
+
+                if (result != null)
+                {
+                    ImgPath = result.ToString();
+                }
+
+            }
+            catch (Exception e)
+            {
+                File.AppendAllText(_ExceptionLog,@"//" + _TableName + @"//" + e.Message + "\n" + DateTime.Now.ToString() + "\n");
+            }
+            finally
+            {
+                _Connection.Close();
+            }
+
+            return ImgPath;
+        }
     }
 }
