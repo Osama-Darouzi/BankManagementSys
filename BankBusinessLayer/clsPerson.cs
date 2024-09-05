@@ -147,7 +147,7 @@ namespace BankBusinessLayer
 
         private bool _IsImageModified = false;
 
-        protected string _DatabaseImgPath {get{return } };
+        protected string _DatabaseImgPath {get{ return clsPersonDA.GetImgPath(PersonID); } }
         protected enRole _Role { get; set; }
 
         public int PersonID { get { return _PersonID; } }
@@ -240,6 +240,7 @@ namespace BankBusinessLayer
 
         private bool _Update()
         {
+            string DBImgPath = _DatabaseImgPath;
             bool UpdateState = clsPersonDA.UpdateByID(PersonID, FirstName, LastName, (byte)Sex, Email, Address, _ImagePath);
 
             if (UpdateState)
@@ -247,7 +248,10 @@ namespace BankBusinessLayer
                 clsUserActionLogger.AddAction(AppGlobals.SysUser.ID, PersonID, enUserActions.Update);
 
                 if (_IsImageModified)
+                {
+                    ImageHandler.DeleteImage(DBImgPath);
                     ImageHandler.SaveImage(_PImage, _ImagePath);
+                }
             }
 
             return UpdateState;

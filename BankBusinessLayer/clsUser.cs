@@ -122,7 +122,7 @@ namespace BankBusinessLayer
             if (clsUserDA.GetByID(UserID, ref PersonID, ref FirstName, ref LastName, ref Sex, ref Email, ref Address, ref ImagePath
                 , ref Username, ref Password, ref Permissions))
             {
-                Image Pfp = ImageHandler.GetImage(ImagePath);
+                Image Pfp = ImageHandler.GetCopyImage(ImagePath);
                 return new clsUser(UserID, PersonID, FirstName, LastName, Sex, Email, Address, Pfp, Username, Password, Permissions);
             }
 
@@ -139,7 +139,7 @@ namespace BankBusinessLayer
             if (clsUserDA.GetByUsername(Username, ref UserID, ref PersonID, ref FirstName, ref LastName, ref Sex, ref Email, ref Address, ref ImagePath
                 , ref Password, ref Permissions))
             {
-                Image Pfp = ImageHandler.GetImage(ImagePath);
+                Image Pfp = ImageHandler.GetCopyImage(ImagePath);
                 return new clsUser(UserID, PersonID, FirstName, LastName, Sex, Email, Address, Pfp, Username, Password, Permissions);
             }
 
