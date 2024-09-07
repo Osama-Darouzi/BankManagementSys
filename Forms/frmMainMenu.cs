@@ -14,7 +14,7 @@ using static BankBusinessLayer.AppGlobals;
 
 namespace Bank.Forms
 {
-    public partial class frmMainMenu : frmScreen
+    public partial class frmMainMenu : frmBankScreen
     {
         public frmMainMenu() : base()
         {
@@ -32,10 +32,6 @@ namespace Bank.Forms
             pbProPic.Image = SysUser.PImage;
         }
 
-        private void frmMainMenu_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
 
         protected override void OnPaint(PaintEventArgs e)
         {

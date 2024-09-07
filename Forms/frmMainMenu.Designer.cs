@@ -248,7 +248,6 @@
             this.RestoreButton = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ed";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMainMenu_FormClosed);
             this.Controls.SetChildIndex(this.Separator, 0);
             this.Controls.SetChildIndex(this.btnManageClients, 0);
             this.Controls.SetChildIndex(this.btnUsersActions, 0);

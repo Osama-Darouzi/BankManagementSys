@@ -37,6 +37,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>BankBusinessLayer\bin\Debug\BankBusinessLayer.dll</HintPath>
     </Reference>
+    <Reference Include="ComponentFactory.Krypton.Ribbon">
+      <HintPath>C:\Users\ASUS\.nuget\packages\Krypton-master\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit">
+      <HintPath>C:\Users\ASUS\.nuget\packages\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Users\ASUS\.nuget\packages\guna.ui2.winforms\2.0.4.6\lib\net48\Guna.UI2.dll</HintPath>
@@ -59,6 +65,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -71,6 +78,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Class1.cs" />
+    <Compile Include="Forms\frmBankScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmBankScreen.Designer.cs">
+      <DependentUpon>frmBankScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Info Cards Forms\frmUserCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Info Cards Forms\frmUserCard.Designer.cs">
+      <DependentUpon>frmUserCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Login\frmLoginScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,8 +122,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frmBankScreen.resx">
+      <DependentUpon>frmBankScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLoading.resx">
       <DependentUpon>frmLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Info Cards Forms\frmUserCard.resx">
+      <DependentUpon>frmUserCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\frmLoginScreen.resx">
       <DependentUpon>frmLoginScreen.cs</DependentUpon>
