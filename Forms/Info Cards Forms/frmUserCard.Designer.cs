@@ -57,7 +57,7 @@
             // 
             // lblTime
             // 
-            this.lblTime.Location = new System.Drawing.Point(483, 8);
+            this.lblTime.Location = new System.Drawing.Point(513, 8);
             // 
             // lblUsername
             // 
@@ -132,7 +132,6 @@
             this.Controls.Add(this.UCard);
             this.MinimizeButton = true;
             this.Name = "frmUserCard";
-            this.RestoreButton = true;
             this.Text = "frmUserCard";
             this.TimeSynchronization = false;
             this.Controls.SetChildIndex(this.PnlHead, 0);

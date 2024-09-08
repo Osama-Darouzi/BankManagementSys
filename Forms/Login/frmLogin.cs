@@ -38,7 +38,7 @@ namespace Bank.Forms
 			{
 				return;
 			}
-			
+
 			this.Hide();
 			frmMainMenu menu = new frmMainMenu();
 			menu.ShowDialog();
@@ -74,7 +74,7 @@ namespace Bank.Forms
 
 			if (SysUser != null)
 			{
-				clsLoginRegister.AddLogin(SysUser.ID, SysUser.Username, SysUser.Permissions);
+				clsLoginRegister.AddLogin(SysUser);
 				_RememberingProcess();
 				_Login();
 			}

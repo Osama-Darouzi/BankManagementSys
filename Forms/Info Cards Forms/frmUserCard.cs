@@ -44,6 +44,7 @@ namespace Bank.Forms.Info_Cards_Forms
         public frmUserCard()
         {
             InitializeComponent();
+            PnlHead.BackColor = UCard.Theme;
             UserStateChanged += FrmUserCard_UserStateChanged;
         }
 
