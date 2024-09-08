@@ -11,6 +11,7 @@ using ControlsUtil;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static BankBusinessLayer.AppGlobals;
+using Guna.UI2.WinForms;
 
 namespace Bank.Forms
 {
@@ -22,23 +23,43 @@ namespace Bank.Forms
 
             if (SysUser == null)
             {
-                Close();
-                Application.OpenForms[0].Show();
+                _Logout();
             }
 
             Mode = enMode.User;
             FullName = SysUser.FirstName + " " + SysUser.LastName;
             Username = SysUser.Username;
             pbProPic.Image = SysUser.PImage;
+            _ApplyPermissions();
+            _InitializeToolTip();
+           // RestoreButton = false;
         }
 
+        private void _ApplyPermissions()
+        {
+            btnManageClients.Enabled = SysUser.HasPermissionOn(enPermissions.ManageClients);
+            btnClientsActions.Enabled = SysUser.HasPermissionOn(enPermissions.ShowClientsActionsLog);
+            btnClientsTransfers.Enabled = SysUser.HasPermissionOn(enPermissions.ShowTransferLog);
+            btnManageUsers.Enabled = SysUser.HasPermissionOn(enPermissions.ManageUsers);
+            btnUsersActions.Enabled = SysUser.HasPermissionOn(enPermissions.ShowUsersActionsLog);
+            btnLoginRegistry.Enabled = SysUser.HasPermissionOn(enPermissions.LoginRegister);
+        }
+
+        private void _InitializeToolTip()
+        {
+            foreach (Control ctrl in this.Controls.OfType<Guna2CircleButton>())
+            {
+                ControlsU.ToolTipOn(ctrl, ctrl.Text);
+            }
+        }
 
         protected override void OnPaint(PaintEventArgs e)
         {
+            RestoreButton = btnRestore.Visible;
             base.OnPaint(e);
-            Size size = new Size(Size.Width / 5, Size.Width / 5);
+            Size size = new Size(Size.Width / 5, Size.Height / 3);
             int ImageSize = 3 * size.Width / 4;
-            int UpY = Separator.Location.Y - size.Width - 30;
+            int UpY = Separator.Location.Y - size.Height - 30;
             int LowY = Separator.Location.Y + 30;
             
             btnManageClients.Size = size;
@@ -62,21 +83,6 @@ namespace Bank.Forms
             btnLoginRegistry.Location = new Point(Separator.Right - size.Width, LowY);
         }
 
-        private void btnManageUsers_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnLoginRegistry_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnUsersAction_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnManageClients_Click(object sender, EventArgs e)
         {
 
@@ -90,6 +96,32 @@ namespace Bank.Forms
         private void btnClientsTransfers_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnManageUsers_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnUsersAction_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLoginRegistry_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btns_EnabledChanged(object sender, EventArgs e)
+        {
+            Guna2CircleButton btn = (Guna2CircleButton)sender;
+            if (btn.Enabled)
+            {
+                ControlsU.ToolTipOn(btn, btn.Text);
+                return;
+            }
+            ControlsU.ToolTipOn(btn, $"Access to {btn.Text} Denied");
         }
     }
 }

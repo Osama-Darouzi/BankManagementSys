@@ -96,7 +96,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnManageClients.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnManageClients.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnManageClients.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnManageClients.DisabledState.FillColor = System.Drawing.Color.Transparent;
             this.btnManageClients.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnManageClients.FillColor = System.Drawing.Color.Transparent;
             this.btnManageClients.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -111,15 +111,19 @@
             this.btnManageClients.TabIndex = 12;
             this.btnManageClients.Text = "Manage Clients";
             this.btnManageClients.TextOffset = new System.Drawing.Point(0, 20);
+            this.btnManageClients.EnabledChanged += new System.EventHandler(this.btns_EnabledChanged);
             this.btnManageClients.Click += new System.EventHandler(this.btnManageClients_Click);
             // 
             // btnUsersActions
             // 
-            this.btnUsersActions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnUsersActions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUsersActions.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnUsersActions.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnUsersActions.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUsersActions.DisabledState.FillColor = System.Drawing.Color.Transparent;
             this.btnUsersActions.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUsersActions.Enabled = false;
             this.btnUsersActions.FillColor = System.Drawing.Color.Transparent;
             this.btnUsersActions.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsersActions.ForeColor = System.Drawing.Color.Black;
@@ -133,13 +137,17 @@
             this.btnUsersActions.TabIndex = 13;
             this.btnUsersActions.Text = "Users Actions";
             this.btnUsersActions.TextOffset = new System.Drawing.Point(0, 20);
+            this.btnUsersActions.EnabledChanged += new System.EventHandler(this.btns_EnabledChanged);
             this.btnUsersActions.Click += new System.EventHandler(this.btnLoginRegistry_Click);
             // 
             // btnLoginRegistry
             // 
+            this.btnLoginRegistry.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLoginRegistry.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLoginRegistry.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLoginRegistry.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLoginRegistry.DisabledState.FillColor = System.Drawing.Color.Transparent;
             this.btnLoginRegistry.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnLoginRegistry.FillColor = System.Drawing.Color.Transparent;
             this.btnLoginRegistry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -154,15 +162,19 @@
             this.btnLoginRegistry.TabIndex = 14;
             this.btnLoginRegistry.Text = "Login Registry";
             this.btnLoginRegistry.TextOffset = new System.Drawing.Point(0, 20);
+            this.btnLoginRegistry.EnabledChanged += new System.EventHandler(this.btns_EnabledChanged);
             this.btnLoginRegistry.Click += new System.EventHandler(this.btnUsersAction_Click);
             // 
             // btnManageUsers
             // 
-            this.btnManageUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnManageUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnManageUsers.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnManageUsers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnManageUsers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnManageUsers.DisabledState.FillColor = System.Drawing.Color.Transparent;
             this.btnManageUsers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnManageUsers.Enabled = false;
             this.btnManageUsers.FillColor = System.Drawing.Color.Transparent;
             this.btnManageUsers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageUsers.ForeColor = System.Drawing.Color.Black;
@@ -176,6 +188,7 @@
             this.btnManageUsers.TabIndex = 15;
             this.btnManageUsers.Text = "Manage Users";
             this.btnManageUsers.TextOffset = new System.Drawing.Point(0, 20);
+            this.btnManageUsers.EnabledChanged += new System.EventHandler(this.btns_EnabledChanged);
             this.btnManageUsers.Click += new System.EventHandler(this.btnManageUsers_Click);
             // 
             // btnClientsActions
@@ -185,7 +198,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClientsActions.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnClientsActions.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnClientsActions.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClientsActions.DisabledState.FillColor = System.Drawing.Color.Transparent;
             this.btnClientsActions.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnClientsActions.FillColor = System.Drawing.Color.Transparent;
             this.btnClientsActions.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -201,6 +214,7 @@
             this.btnClientsActions.TabIndex = 16;
             this.btnClientsActions.Text = "Transactions History";
             this.btnClientsActions.TextOffset = new System.Drawing.Point(0, 20);
+            this.btnClientsActions.EnabledChanged += new System.EventHandler(this.btns_EnabledChanged);
             this.btnClientsActions.Click += new System.EventHandler(this.btnClientsActions_Click);
             // 
             // btnClientsTransfers
@@ -211,7 +225,7 @@
             this.btnClientsTransfers.BackColor = System.Drawing.Color.Transparent;
             this.btnClientsTransfers.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnClientsTransfers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnClientsTransfers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClientsTransfers.DisabledState.FillColor = System.Drawing.Color.Transparent;
             this.btnClientsTransfers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnClientsTransfers.FillColor = System.Drawing.Color.Transparent;
             this.btnClientsTransfers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -227,6 +241,7 @@
             this.btnClientsTransfers.TabIndex = 17;
             this.btnClientsTransfers.Text = "Transfer History";
             this.btnClientsTransfers.TextOffset = new System.Drawing.Point(0, 20);
+            this.btnClientsTransfers.EnabledChanged += new System.EventHandler(this.btns_EnabledChanged);
             this.btnClientsTransfers.Click += new System.EventHandler(this.btnClientsTransfers_Click);
             // 
             // frmMainMenu
@@ -241,13 +256,12 @@
             this.Controls.Add(this.btnUsersActions);
             this.Controls.Add(this.btnManageClients);
             this.Controls.Add(this.Separator);
-            this.MinimizeButton = true;
             this.MinimumSize = new System.Drawing.Size(0, 94);
             this.Mode = MyUC.Forms.frmScreen.enMode.User;
             this.Name = "frmMainMenu";
-            this.RestoreButton = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ed";
+            this.Controls.SetChildIndex(this.PnlHead, 0);
             this.Controls.SetChildIndex(this.Separator, 0);
             this.Controls.SetChildIndex(this.btnManageClients, 0);
             this.Controls.SetChildIndex(this.btnUsersActions, 0);
@@ -255,7 +269,6 @@
             this.Controls.SetChildIndex(this.btnManageUsers, 0);
             this.Controls.SetChildIndex(this.btnClientsActions, 0);
             this.Controls.SetChildIndex(this.btnClientsTransfers, 0);
-            this.Controls.SetChildIndex(this.PnlHead, 0);
             this.PnlHead.ResumeLayout(false);
             this.PnlHead.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStar)).EndInit();
