@@ -63,7 +63,7 @@ namespace BankDAL
             bool Process = false;
 
             string query = $@"UPDATE {_TableName}
-                             SET IsActive = 0
+                             SET IsActive = 1
                              WHERE UserID = @UserID";
 
             SqlCommand cmd = new SqlCommand(query, _Connection);
