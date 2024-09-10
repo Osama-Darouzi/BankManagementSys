@@ -29,13 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserCard));
-            this.UCard = new BankUC.UserCard();
             this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
             this.btnForget = new Guna.UI2.WinForms.Guna2Button();
+            this.UCard = new BankUC.UserCard();
             this.PnlHead.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProPic)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pnlSide
+            // 
+            this.pnlSide.Location = new System.Drawing.Point(0, 35);
+            this.pnlSide.Size = new System.Drawing.Size(47, 485);
+            // 
+            // pnlMenu
+            // 
+            this.pnlMenu.Location = new System.Drawing.Point(0, 520);
             // 
             // PnlHead
             // 
@@ -49,11 +58,12 @@
             // 
             // pbProPic
             // 
-            this.pbProPic.Location = new System.Drawing.Point(-415, 1);
+            this.pbProPic.Location = new System.Drawing.Point(266, 1);
+            this.pbProPic.Size = new System.Drawing.Size(35, 35);
             // 
             // lnkFullName
             // 
-            this.lnkFullName.Location = new System.Drawing.Point(-314, 16);
+            this.lnkFullName.Location = new System.Drawing.Point(307, 8);
             // 
             // lblTime
             // 
@@ -61,20 +71,7 @@
             // 
             // lblUsername
             // 
-            this.lblUsername.Location = new System.Drawing.Point(-311, 42);
-            // 
-            // UCard
-            // 
-            this.UCard.Dock = System.Windows.Forms.DockStyle.Top;
-            this.UCard.HeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(251)))));
-            this.UCard.Location = new System.Drawing.Point(0, 35);
-            this.UCard.MinimumSize = new System.Drawing.Size(644, 534);
-            this.UCard.Name = "UCard";
-            this.UCard.PFP = ((System.Drawing.Image)(resources.GetObject("UCard.PFP")));
-            this.UCard.Size = new System.Drawing.Size(645, 534);
-            this.UCard.TabIndex = 0;
-            this.UCard.Theme = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(251)))));
-            this.UCard.ThemeChanged += new MyUC.MyUC_Shared.ColorEveHan(this.UCard_ThemeChanged);
+            this.lblUsername.Location = new System.Drawing.Point(310, 8);
             // 
             // btnLogout
             // 
@@ -122,19 +119,35 @@
             this.btnForget.TextOffset = new System.Drawing.Point(0, -1);
             this.btnForget.Click += new System.EventHandler(this.btnForget_Click);
             // 
+            // UCard
+            // 
+            this.UCard.Dock = System.Windows.Forms.DockStyle.Top;
+            this.UCard.HeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(251)))));
+            this.UCard.Location = new System.Drawing.Point(0, 35);
+            this.UCard.MinimumSize = new System.Drawing.Size(644, 534);
+            this.UCard.Name = "UCard";
+            this.UCard.PFP = ((System.Drawing.Image)(resources.GetObject("UCard.PFP")));
+            this.UCard.Size = new System.Drawing.Size(645, 534);
+            this.UCard.TabIndex = 0;
+            this.UCard.Theme = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(251)))));
+            this.UCard.ThemeChanged += new MyUC.MyUC_Shared.ColorEveHan(this.UCard_ThemeChanged);
+            // 
             // frmUserCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(645, 629);
+            this.CloseStyle = MyUC.Forms.frmScreen.enCloseStyle.Back;
             this.Controls.Add(this.btnForget);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.UCard);
-            this.MinimizeButton = true;
             this.Name = "frmUserCard";
+            this.RestoreButton = false;
             this.Text = "frmUserCard";
             this.TimeSynchronization = false;
             this.Controls.SetChildIndex(this.PnlHead, 0);
+            this.Controls.SetChildIndex(this.pnlSide, 0);
+            this.Controls.SetChildIndex(this.pnlMenu, 0);
             this.Controls.SetChildIndex(this.UCard, 0);
             this.Controls.SetChildIndex(this.btnLogout, 0);
             this.Controls.SetChildIndex(this.btnForget, 0);
