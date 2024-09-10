@@ -41,10 +41,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbProPic)).BeginInit();
             this.SuspendLayout();
             // 
+            // pnlSide
+            // 
+            this.pnlSide.Location = new System.Drawing.Point(0, 96);
+            this.pnlSide.Size = new System.Drawing.Size(47, 395);
+            // 
+            // pnlMenu
+            // 
+            this.pnlMenu.Location = new System.Drawing.Point(0, 491);
+            // 
             // PnlHead
             // 
-            this.PnlHead.MinimumSize = new System.Drawing.Size(0, 94);
-            this.PnlHead.Size = new System.Drawing.Size(1000, 94);
+            this.PnlHead.Size = new System.Drawing.Size(1000, 96);
             this.PnlHead.Controls.SetChildIndex(this.lblUsername, 0);
             this.PnlHead.Controls.SetChildIndex(this.pbStar, 0);
             this.PnlHead.Controls.SetChildIndex(this.pbProPic, 0);
@@ -53,24 +61,25 @@
             // 
             // pbStar
             // 
-            this.pbStar.Location = new System.Drawing.Point(0, 0);
-            this.pbStar.Size = new System.Drawing.Size(94, 94);
+            this.pbStar.Size = new System.Drawing.Size(96, 96);
             // 
             // pbProPic
             // 
-            this.pbProPic.Location = new System.Drawing.Point(387, 0);
+            this.pbProPic.Location = new System.Drawing.Point(371, 1);
+            this.pbProPic.Size = new System.Drawing.Size(96, 96);
             // 
             // lnkFullName
             // 
-            this.lnkFullName.Location = new System.Drawing.Point(488, 10);
+            this.lnkFullName.Location = new System.Drawing.Point(477, 18);
             // 
             // lblTime
             // 
-            this.lblTime.Location = new System.Drawing.Point(838, 8);
+            this.lblTime.Location = new System.Drawing.Point(829, 8);
+            this.lblTime.Text = "10:25 AM";
             // 
             // lblUsername
             // 
-            this.lblUsername.Location = new System.Drawing.Point(489, 42);
+            this.lblUsername.Location = new System.Drawing.Point(480, 39);
             // 
             // Separator
             // 
@@ -256,12 +265,15 @@
             this.Controls.Add(this.btnUsersActions);
             this.Controls.Add(this.btnManageClients);
             this.Controls.Add(this.Separator);
-            this.MinimumSize = new System.Drawing.Size(0, 94);
             this.Mode = MyUC.Forms.frmScreen.enMode.User;
             this.Name = "frmMainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ed";
+            this.UsernameVisibility = true;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMainMenu_FormClosed);
             this.Controls.SetChildIndex(this.PnlHead, 0);
+            this.Controls.SetChildIndex(this.pnlSide, 0);
+            this.Controls.SetChildIndex(this.pnlMenu, 0);
             this.Controls.SetChildIndex(this.Separator, 0);
             this.Controls.SetChildIndex(this.btnManageClients, 0);
             this.Controls.SetChildIndex(this.btnUsersActions, 0);

@@ -56,17 +56,17 @@
             // 
             // pbProPic
             // 
-            this.pbProPic.Location = new System.Drawing.Point(-3662, 0);
+            this.pbProPic.Location = new System.Drawing.Point(-4094, 0);
             // 
             // lnkFullName
             // 
-            this.lnkFullName.Location = new System.Drawing.Point(-2160, 26);
+            this.lnkFullName.Location = new System.Drawing.Point(-2592, 26);
             // 
             // lblTime
             // 
             this.lblTime.Font = new System.Drawing.Font("Digital-7 Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(222, 8);
-            this.lblTime.Size = new System.Drawing.Size(57, 17);
+            this.lblTime.Location = new System.Drawing.Point(215, 8);
+            this.lblTime.Size = new System.Drawing.Size(64, 17);
             // 
             // lnkMadeBy
             // 
@@ -87,9 +87,9 @@
             this.pbBackGraghics.BackColor = System.Drawing.Color.Transparent;
             this.pbBackGraghics.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbBackGraghics.Image = global::Bank.Properties.Resources.Bank_LoginScreen;
-            this.pbBackGraghics.Location = new System.Drawing.Point(0, 0);
+            this.pbBackGraghics.Location = new System.Drawing.Point(0, 35);
             this.pbBackGraghics.Name = "pbBackGraghics";
-            this.pbBackGraghics.Size = new System.Drawing.Size(369, 489);
+            this.pbBackGraghics.Size = new System.Drawing.Size(369, 454);
             this.pbBackGraghics.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbBackGraghics.TabIndex = 0;
             this.pbBackGraghics.TabStop = false;
@@ -109,7 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::Bank.Properties.Resources.Bank_LoginScreenFixed;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(369, 489);
@@ -118,15 +118,17 @@
             this.Controls.Add(this.pbBackGraghics);
             this.DoubleBuffered = true;
             this.FormBtnsColor = MyUC.Forms.frmScreen.enBtnColor.White;
+            this.MaximumSize = new System.Drawing.Size(369, 489);
             this.MinimizeButton = true;
+            this.MinimumSize = new System.Drawing.Size(369, 489);
             this.Name = "frmLoginScreen";
             this.RestoreButton = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.TimeSynchronization = false;
             this.Load += new System.EventHandler(this.frmLogin_Load);
-            this.Controls.SetChildIndex(this.pbBackGraghics, 0);
             this.Controls.SetChildIndex(this.PnlHead, 0);
+            this.Controls.SetChildIndex(this.pbBackGraghics, 0);
             this.Controls.SetChildIndex(this.pbBanklogo, 0);
             this.Controls.SetChildIndex(this.lnkMadeBy, 0);
             this.PnlHead.ResumeLayout(false);

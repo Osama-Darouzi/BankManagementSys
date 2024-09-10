@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            Guna.UI2.WinForms.Suite.TextBoxState textBoxState2 = new Guna.UI2.WinForms.Suite.TextBoxState();
-            Guna.UI2.WinForms.Suite.TextBoxState textBoxState1 = new Guna.UI2.WinForms.Suite.TextBoxState();
             this.chkRemember = new System.Windows.Forms.CheckBox();
             this.tControlsShow = new System.Windows.Forms.Timer(this.components);
             this.btnLogin = new System.Windows.Forms.Button();
@@ -66,6 +64,7 @@
             // 
             // lblTime
             // 
+            this.lblTime.ForeColor = System.Drawing.Color.Black;
             this.lblTime.Location = new System.Drawing.Point(252, 8);
             this.lblTime.Text = "8:01 AM";
             // 
@@ -115,11 +114,12 @@
             // txtUsername
             // 
             this.txtUsername.BackColor = System.Drawing.Color.Transparent;
-            textBoxState2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUsername.ForeColor = System.Drawing.Color.Transparent;
             this.txtUsername.HeaderColor = System.Drawing.Color.White;
             this.txtUsername.HName = "Username";
+            this.txtUsername.HNameFont = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.LengthLabelColor = System.Drawing.Color.Red;
+            this.txtUsername.LengthLabelFont = new System.Drawing.Font("Tahoma", 8F);
             this.txtUsername.Location = new System.Drawing.Point(84, 134);
             this.txtUsername.Max = ((ushort)(50));
             this.txtUsername.Min = ((ushort)(5));
@@ -127,15 +127,17 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(200, 56);
             this.txtUsername.TabIndex = 11;
+            this.txtUsername.TextBoxFont = new System.Drawing.Font("Segoe UI", 9F);
             this.txtUsername.Visible = false;
             // 
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.Transparent;
-            textBoxState1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.HeaderColor = System.Drawing.Color.White;
             this.txtPassword.HName = "Password";
+            this.txtPassword.HNameFont = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.LengthLabelColor = System.Drawing.Color.Red;
+            this.txtPassword.LengthLabelFont = new System.Drawing.Font("Tahoma", 8F);
             this.txtPassword.Location = new System.Drawing.Point(84, 211);
             this.txtPassword.Max = ((ushort)(50));
             this.txtPassword.Min = ((ushort)(8));
@@ -143,6 +145,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(200, 56);
             this.txtPassword.TabIndex = 12;
+            this.txtPassword.TextBoxFont = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPassword.Visible = false;
             // 
             // btnRemembered
@@ -178,16 +181,14 @@
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.chkRemember);
             this.FormBtnsColor = MyUC.Forms.frmScreen.enBtnColor.Black;
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.MinimizeButton = true;
             this.Name = "frmLogin";
             this.Load += new System.EventHandler(this.frmLogin_Load);
+            this.Controls.SetChildIndex(this.PnlHead, 0);
             this.Controls.SetChildIndex(this.pbBackGraghics, 0);
             this.Controls.SetChildIndex(this.chkRemember, 0);
             this.Controls.SetChildIndex(this.btnLogin, 0);
             this.Controls.SetChildIndex(this.txtUsername, 0);
             this.Controls.SetChildIndex(this.txtPassword, 0);
-            this.Controls.SetChildIndex(this.PnlHead, 0);
             this.Controls.SetChildIndex(this.pbBanklogo, 0);
             this.Controls.SetChildIndex(this.lnkMadeBy, 0);
             this.Controls.SetChildIndex(this.btnRemembered, 0);

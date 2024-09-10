@@ -26,7 +26,6 @@ namespace Bank.Forms
                 _Logout();
             }
 
-            Mode = enMode.User;
             FullName = SysUser.FirstName + " " + SysUser.LastName;
             Username = SysUser.Username;
             pbProPic.Image = SysUser.PImage;
@@ -37,12 +36,12 @@ namespace Bank.Forms
 
         private void _ApplyPermissions()
         {
-            btnManageClients.Enabled = SysUser.HasPermissionOn(enPermissions.ManageClients);
-            btnClientsActions.Enabled = SysUser.HasPermissionOn(enPermissions.ShowClientsActionsLog);
-            btnClientsTransfers.Enabled = SysUser.HasPermissionOn(enPermissions.ShowTransferLog);
-            btnManageUsers.Enabled = SysUser.HasPermissionOn(enPermissions.ManageUsers);
-            btnUsersActions.Enabled = SysUser.HasPermissionOn(enPermissions.ShowUsersActionsLog);
-            btnLoginRegistry.Enabled = SysUser.HasPermissionOn(enPermissions.LoginRegister);
+            btnManageClients.Enabled = sdbtnMngClients.Enabled;
+            btnClientsActions.Enabled = sdbtnClientsActions.Enabled;
+            btnClientsTransfers.Enabled = sdbtnClientsTransfers.Enabled;
+            btnManageUsers.Enabled = sdbtnMngUsers.Enabled;
+            btnUsersActions.Enabled = sdbtnUsersActions.Enabled;
+            btnLoginRegistry.Enabled = sdbtnLoginRegistry.Enabled;
         }
 
         private void _InitializeToolTip()
@@ -122,6 +121,15 @@ namespace Bank.Forms
                 return;
             }
             ControlsU.ToolTipOn(btn, $"Access to {btn.Text} Denied");
+        }
+
+        private void frmMainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!_IsLogout)
+            {
+                _IsLogout = false;
+                Application.Exit();
+            }
         }
     }
 }

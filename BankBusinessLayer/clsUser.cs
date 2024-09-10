@@ -158,6 +158,12 @@ namespace BankBusinessLayer
             return null;
         }
 
+        public bool HasPermissionOn(enPermissions permission)
+        {
+            int perm = (int)permission;
+            return (Permissions & perm) != 0;
+        }
+
         public override bool Save()
         {
             bool PersonSave = base.Save();

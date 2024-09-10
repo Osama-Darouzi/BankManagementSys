@@ -37,6 +37,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>BankBusinessLayer\bin\Debug\BankBusinessLayer.dll</HintPath>
     </Reference>
+    <Reference Include="ComponentFactory.Krypton.Docking">
+      <HintPath>C:\Users\ASUS\.nuget\packages\Krypton-master\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
+    </Reference>
     <Reference Include="ComponentFactory.Krypton.Ribbon">
       <HintPath>C:\Users\ASUS\.nuget\packages\Krypton-master\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
     </Reference>
@@ -84,6 +87,12 @@
     <Compile Include="Forms\frmBankScreen.Designer.cs">
       <DependentUpon>frmBankScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Info Cards Forms\frmClientCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Info Cards Forms\frmClientCard.Designer.cs">
+      <DependentUpon>frmClientCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Info Cards Forms\frmUserCard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLoading.resx">
       <DependentUpon>frmLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Info Cards Forms\frmClientCard.resx">
+      <DependentUpon>frmClientCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Info Cards Forms\frmUserCard.resx">
       <DependentUpon>frmUserCard.cs</DependentUpon>

@@ -29,7 +29,7 @@ namespace BankDAL
         public static bool AddNewWith(int UserID)
         {
             bool AddingProcess = false;
-            string query = $@"INSERT INTO {_TableName}
+            string query = $@"INSERT INTO {_TableName}(UserID)
                              VALUES(@UserID)";
 
             SqlCommand cmd = new SqlCommand(query, _Connection);
@@ -63,7 +63,7 @@ namespace BankDAL
             bool Process = false;
 
             string query = $@"UPDATE {_TableName}
-                             SET IsActive = 1
+                             SET IsActive = @IsActive
                              WHERE UserID = @UserID";
 
             SqlCommand cmd = new SqlCommand(query, _Connection);

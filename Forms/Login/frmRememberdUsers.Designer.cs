@@ -58,9 +58,24 @@
             this.PnlHead.Controls.SetChildIndex(this.lnkFullName, 0);
             this.PnlHead.Controls.SetChildIndex(this.lblTime, 0);
             // 
+            // pbProPic
+            // 
+            this.pbProPic.Location = new System.Drawing.Point(137, 1);
+            this.pbProPic.Size = new System.Drawing.Size(35, 35);
+            // 
+            // lnkFullName
+            // 
+            this.lnkFullName.Location = new System.Drawing.Point(175, 8);
+            // 
             // lblTime
             // 
-            this.lblTime.Location = new System.Drawing.Point(252, 8);
+            this.lblTime.ForeColor = System.Drawing.Color.Black;
+            this.lblTime.Location = new System.Drawing.Point(245, 8);
+            this.lblTime.Text = "10:27 AM";
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.Location = new System.Drawing.Point(178, 8);
             // 
             // lvRememberedUsers
             // 
@@ -98,14 +113,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(369, 489);
+            this.CloseStyle = MyUC.Forms.frmScreen.enCloseStyle.Back;
             this.Controls.Add(this.lvRememberedUsers);
             this.FormBtnsColor = MyUC.Forms.frmScreen.enBtnColor.Black;
-            this.MinimizeButton = true;
             this.Name = "frmRememberdUsers";
+            this.ShowIcon = false;
             this.Text = "frmRememberdUsers";
+            this.Controls.SetChildIndex(this.PnlHead, 0);
             this.Controls.SetChildIndex(this.lvRememberedUsers, 0);
             this.Controls.SetChildIndex(this.pbBackGraghics, 0);
-            this.Controls.SetChildIndex(this.PnlHead, 0);
             this.Controls.SetChildIndex(this.pbBanklogo, 0);
             this.Controls.SetChildIndex(this.lnkMadeBy, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbBackGraghics)).EndInit();
