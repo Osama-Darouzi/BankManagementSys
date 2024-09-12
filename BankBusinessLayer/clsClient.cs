@@ -186,7 +186,7 @@ namespace BankBusinessLayer
 
         public void Deposit(double Amount)
         {
-            clsClientActionLogger.AddAction(_ClientID, Amount, enClientActions.Deposit);
+            if(ID != -1) clsClientActionLogger.AddAction(_ClientID, Amount, enClientActions.Deposit);
             P_Deposit(Amount);
         }
 
