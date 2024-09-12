@@ -44,49 +44,24 @@
             // 
             // PnlHead
             // 
-            this.PnlHead.Size = new System.Drawing.Size(800, 35);
             this.PnlHead.Controls.SetChildIndex(this.pbStar, 0);
             this.PnlHead.Controls.SetChildIndex(this.pbProPic, 0);
             this.PnlHead.Controls.SetChildIndex(this.lnkFullName, 0);
             this.PnlHead.Controls.SetChildIndex(this.lblTime, 0);
             this.PnlHead.Controls.SetChildIndex(this.lblUsername, 0);
             // 
-            // pbStar
-            // 
-            this.pbStar.Size = new System.Drawing.Size(35, 35);
-            // 
-            // pbProPic
-            // 
-            this.pbProPic.Location = new System.Drawing.Point(339, 1);
-            this.pbProPic.Size = new System.Drawing.Size(35, 35);
-            // 
-            // lnkFullName
-            // 
-            this.lnkFullName.Location = new System.Drawing.Point(382, 8);
-            // 
-            // lblTime
-            // 
-            this.lblTime.Location = new System.Drawing.Point(629, 8);
-            this.lblTime.Text = "10:27 AM";
-            // 
-            // lblUsername
-            // 
-            this.lblUsername.Location = new System.Drawing.Point(385, 8);
-            // 
             // pnlSide
             // 
-            this.pnlSide.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.pnlSide.BackColor = System.Drawing.Color.LightSkyBlue;
             this.pnlSide.Controls.Add(this.sdbtnUsersActions);
             this.pnlSide.Controls.Add(this.sdbtnLoginRegistry);
             this.pnlSide.Controls.Add(this.sdbtnMngUsers);
             this.pnlSide.Controls.Add(this.sdbtnClientsActions);
             this.pnlSide.Controls.Add(this.sdbtnClientsTransfers);
             this.pnlSide.Controls.Add(this.sdbtnMngClients);
-            this.pnlSide.Location = new System.Drawing.Point(0, 34);
+            this.pnlSide.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlSide.Location = new System.Drawing.Point(0, 46);
             this.pnlSide.Name = "pnlSide";
-            this.pnlSide.Size = new System.Drawing.Size(47, 306);
+            this.pnlSide.Size = new System.Drawing.Size(47, 404);
             this.pnlSide.TabIndex = 1;
             this.pnlSide.Visible = false;
             // 
@@ -113,6 +88,7 @@
             this.sdbtnUsersActions.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0);
             this.sdbtnUsersActions.Size = new System.Drawing.Size(45, 45);
             this.sdbtnUsersActions.TabIndex = 5;
+            this.sdbtnUsersActions.Click += new System.EventHandler(this.sdbtnUsersAction_Click);
             // 
             // sdbtnLoginRegistry
             // 
@@ -137,6 +113,7 @@
             this.sdbtnLoginRegistry.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0);
             this.sdbtnLoginRegistry.Size = new System.Drawing.Size(45, 45);
             this.sdbtnLoginRegistry.TabIndex = 4;
+            this.sdbtnLoginRegistry.Click += new System.EventHandler(this.sdbtnLoginRegistry_Click);
             // 
             // sdbtnMngUsers
             // 
@@ -160,6 +137,7 @@
             this.sdbtnMngUsers.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0);
             this.sdbtnMngUsers.Size = new System.Drawing.Size(45, 45);
             this.sdbtnMngUsers.TabIndex = 3;
+            this.sdbtnMngUsers.Click += new System.EventHandler(this.sdbtnManageUsers_Click);
             // 
             // sdbtnClientsActions
             // 
@@ -184,6 +162,7 @@
             this.sdbtnClientsActions.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0);
             this.sdbtnClientsActions.Size = new System.Drawing.Size(45, 45);
             this.sdbtnClientsActions.TabIndex = 2;
+            this.sdbtnClientsActions.Click += new System.EventHandler(this.sdbtnClientsActions_Click);
             // 
             // sdbtnClientsTransfers
             // 
@@ -208,6 +187,7 @@
             this.sdbtnClientsTransfers.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0);
             this.sdbtnClientsTransfers.Size = new System.Drawing.Size(45, 45);
             this.sdbtnClientsTransfers.TabIndex = 1;
+            this.sdbtnClientsTransfers.Click += new System.EventHandler(this.sdbtnClientsTransfers_Click);
             // 
             // sdbtnMngClients
             // 
@@ -232,14 +212,14 @@
             this.sdbtnMngClients.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0);
             this.sdbtnMngClients.Size = new System.Drawing.Size(45, 45);
             this.sdbtnMngClients.TabIndex = 0;
+            this.sdbtnMngClients.Click += new System.EventHandler(this.sdbtnManageClients_Click);
             // 
             // pnlMenu
             // 
             this.pnlMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pnlMenu.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pnlMenu.Location = new System.Drawing.Point(0, 340);
+            this.pnlMenu.Location = new System.Drawing.Point(0, 350);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(47, 109);
+            this.pnlMenu.Size = new System.Drawing.Size(47, 99);
             this.pnlMenu.TabIndex = 2;
             this.pnlMenu.Visible = false;
             // 
@@ -251,6 +231,7 @@
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlSide);
             this.Name = "frmBankScreen";
+            this.PbStarVisibility = true;
             this.Text = "frmBankScreen";
             this.FullNameClicked += new System.EventHandler(this.frmBankScreen_FullNameClicked);
             this.CloseButtonClicked += new System.EventHandler(this.frmBankScreen_CloseButtonClicked);

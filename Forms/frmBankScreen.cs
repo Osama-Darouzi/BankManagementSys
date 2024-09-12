@@ -12,6 +12,7 @@ using BankBusinessLayer;
 using Bank.Forms.Info_Cards_Forms;
 using System.Net.Sockets;
 using Guna.UI2.WinForms;
+using Bank.Forms.SubFroms;
 
 namespace Bank.Forms
 {
@@ -34,6 +35,20 @@ namespace Bank.Forms
         public frmBankScreen()
         {
             InitializeComponent();
+
+            if (SysUser == null && Application.OpenForms.Count != 0)
+            {
+                _Logout();
+            }
+            else
+            {
+                FullName = SysUser.FirstName + " " + SysUser.LastName;
+                Username = SysUser.Username;
+                pbProPic.Image = SysUser.PImage;
+            }
+
+
+            frmBankScreen_ThemeChanged(PnlHead.BackColor, BackColor);
             _ApplyPermissions();
         }
 
@@ -51,10 +66,12 @@ namespace Bank.Forms
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            pnlSide.Location = new Point(0, PnlHead.Bottom);
+            //pnlSide.SendToBack();
+            //pnlMenu.SendToBack();
+            //pnlSide.Location = new Point(0, PnlHead.Bottom);
             pnlMenu.Location = new Point(0, Height - pnlMenu.Height);
 
-            pnlSide.Height = Height - pnlMenu.Height - PnlHead.Height;
+            //pnlSide.Height = Height - pnlMenu.Height - PnlHead.Height;
 
             base.OnPaint(e);
         }
@@ -112,6 +129,37 @@ namespace Bank.Forms
                     btn.FillColor = BackColor;
                 }
             }
+        }
+
+        protected void sdbtnManageClients_Click(object sender, EventArgs e)
+        {
+            frmManageClients frmManageClients = new frmManageClients();
+            frmManageClients.ShowDialog();
+        }
+
+        protected void sdbtnClientsActions_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void sdbtnClientsTransfers_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void sdbtnManageUsers_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void sdbtnUsersAction_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void sdbtnLoginRegistry_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
