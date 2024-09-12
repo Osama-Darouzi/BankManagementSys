@@ -284,7 +284,8 @@ namespace BankBusinessLayer
             this.Sex = (enSex)Sex;
             this.Email = Email;
             this.Address = Address;
-            this._PImage = Pfp;
+            this.PImage = Pfp;
+            _IsImageModified = false;
             _Role = role;
 
             if (ID == -1)
