@@ -81,6 +81,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Class1.cs" />
+    <Compile Include="Forms\Editors\frmClientEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Editors\frmClientEditor.Designer.cs">
+      <DependentUpon>frmClientEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Editors\frmUserEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Editors\frmUserEditor.Designer.cs">
+      <DependentUpon>frmUserEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmBankScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,8 +141,21 @@
     <Compile Include="Forms\Login\frmRememberdUsers.Designer.cs">
       <DependentUpon>frmRememberdUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SubFroms\frmManageClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubFroms\frmManageClients.Designer.cs">
+      <DependentUpon>frmManageClients.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="Forms\Editors\frmClientEditor.resx">
+      <DependentUpon>frmClientEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editors\frmUserEditor.resx">
+      <DependentUpon>frmUserEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmBankScreen.resx">
       <DependentUpon>frmBankScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\frmRememberdUsers.resx">
       <DependentUpon>frmRememberdUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SubFroms\frmManageClients.resx">
+      <DependentUpon>frmManageClients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -251,6 +279,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user-management.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
