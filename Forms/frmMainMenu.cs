@@ -21,14 +21,7 @@ namespace Bank.Forms
         {
             InitializeComponent();
 
-            if (SysUser == null)
-            {
-                _Logout();
-            }
-
-            FullName = SysUser.FirstName + " " + SysUser.LastName;
-            Username = SysUser.Username;
-            pbProPic.Image = SysUser.PImage;
+            
             _ApplyPermissions();
             _InitializeToolTip();
            // RestoreButton = false;
@@ -82,35 +75,7 @@ namespace Bank.Forms
             btnLoginRegistry.Location = new Point(Separator.Right - size.Width, LowY);
         }
 
-        private void btnManageClients_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnClientsActions_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnClientsTransfers_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnManageUsers_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnUsersAction_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLoginRegistry_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btns_EnabledChanged(object sender, EventArgs e)
         {
@@ -130,6 +95,36 @@ namespace Bank.Forms
                 _IsLogout = false;
                 Application.Exit();
             }
+        }
+
+        private void btnManageClients_Click(object sender, EventArgs e)
+        {
+            sdbtnManageClients_Click(sender, e);
+        }
+
+        private void btnClientsActions_Click(object sender, EventArgs e)
+        {
+            sdbtnClientsActions_Click(sender, e);
+        }
+
+        private void btnClientsTransfers_Click(object sender, EventArgs e)
+        {
+            sdbtnClientsTransfers_Click(sender, e) ;
+        }
+
+        private void btnManageUsers_Click(object sender, EventArgs e)
+        {
+            sdbtnManageUsers_Click(sender , e);
+        }
+
+        private void btnUsersActions_Click(object sender, EventArgs e)
+        {
+            sdbtnUsersAction_Click(sender, e);
+        }
+
+        private void btnLoginRegistry_Click(object sender, EventArgs e)
+        {
+            sdbtnLoginRegistry_Click (sender , e);
         }
     }
 }

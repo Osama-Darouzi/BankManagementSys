@@ -1,4 +1,6 @@
-﻿namespace Bank.Forms
+﻿using System;
+
+namespace Bank.Forms
 {
     partial class frmMainMenu
     {
@@ -43,8 +45,8 @@
             // 
             // pnlSide
             // 
-            this.pnlSide.Location = new System.Drawing.Point(0, 96);
-            this.pnlSide.Size = new System.Drawing.Size(47, 395);
+            this.pnlSide.Location = new System.Drawing.Point(0, 90);
+            this.pnlSide.Size = new System.Drawing.Size(47, 401);
             // 
             // pnlMenu
             // 
@@ -52,7 +54,7 @@
             // 
             // PnlHead
             // 
-            this.PnlHead.Size = new System.Drawing.Size(1000, 96);
+            this.PnlHead.Size = new System.Drawing.Size(1000, 90);
             this.PnlHead.Controls.SetChildIndex(this.lblUsername, 0);
             this.PnlHead.Controls.SetChildIndex(this.pbStar, 0);
             this.PnlHead.Controls.SetChildIndex(this.pbProPic, 0);
@@ -61,25 +63,25 @@
             // 
             // pbStar
             // 
-            this.pbStar.Size = new System.Drawing.Size(96, 96);
+            this.pbStar.Size = new System.Drawing.Size(90, 90);
             // 
             // pbProPic
             // 
-            this.pbProPic.Location = new System.Drawing.Point(371, 1);
-            this.pbProPic.Size = new System.Drawing.Size(96, 96);
+            this.pbProPic.Location = new System.Drawing.Point(377, 1);
+            this.pbProPic.Size = new System.Drawing.Size(90, 90);
             // 
             // lnkFullName
             // 
-            this.lnkFullName.Location = new System.Drawing.Point(477, 18);
+            this.lnkFullName.Location = new System.Drawing.Point(477, 15);
             // 
             // lblTime
             // 
-            this.lblTime.Location = new System.Drawing.Point(829, 8);
-            this.lblTime.Text = "10:25 AM";
+            this.lblTime.Location = new System.Drawing.Point(838, 8);
+            this.lblTime.Text = "6:37 AM";
             // 
             // lblUsername
             // 
-            this.lblUsername.Location = new System.Drawing.Point(480, 39);
+            this.lblUsername.Location = new System.Drawing.Point(480, 36);
             // 
             // Separator
             // 
@@ -147,7 +149,7 @@
             this.btnUsersActions.Text = "Users Actions";
             this.btnUsersActions.TextOffset = new System.Drawing.Point(0, 20);
             this.btnUsersActions.EnabledChanged += new System.EventHandler(this.btns_EnabledChanged);
-            this.btnUsersActions.Click += new System.EventHandler(this.btnLoginRegistry_Click);
+            this.btnUsersActions.Click += new System.EventHandler(this.btnUsersActions_Click);
             // 
             // btnLoginRegistry
             // 
@@ -172,7 +174,7 @@
             this.btnLoginRegistry.Text = "Login Registry";
             this.btnLoginRegistry.TextOffset = new System.Drawing.Point(0, 20);
             this.btnLoginRegistry.EnabledChanged += new System.EventHandler(this.btns_EnabledChanged);
-            this.btnLoginRegistry.Click += new System.EventHandler(this.btnUsersAction_Click);
+            this.btnLoginRegistry.Click += new System.EventHandler(this.btnLoginRegistry_Click);
             // 
             // btnManageUsers
             // 
@@ -267,6 +269,7 @@
             this.Controls.Add(this.Separator);
             this.Mode = MyUC.Forms.frmScreen.enMode.User;
             this.Name = "frmMainMenu";
+            this.PbStarVisibility = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ed";
             this.UsernameVisibility = true;
