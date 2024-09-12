@@ -35,9 +35,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbProPic)).BeginInit();
             this.SuspendLayout();
             // 
+            // pnlSide
+            // 
+            this.pnlSide.Location = new System.Drawing.Point(0, 35);
+            this.pnlSide.Size = new System.Drawing.Size(47, 608);
+            // 
+            // pnlMenu
+            // 
+            this.pnlMenu.Location = new System.Drawing.Point(0, 544);
+            // 
             // PnlHead
             // 
-            this.PnlHead.BackColor = System.Drawing.Color.Transparent;
+            this.PnlHead.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(251)))));
             this.PnlHead.Size = new System.Drawing.Size(398, 35);
             this.PnlHead.Controls.SetChildIndex(this.pbStar, 0);
             this.PnlHead.Controls.SetChildIndex(this.pbProPic, 0);
@@ -51,11 +60,12 @@
             // 
             // pbProPic
             // 
-            this.pbProPic.Location = new System.Drawing.Point(-1924, 1);
+            this.pbProPic.Location = new System.Drawing.Point(151, 1);
+            this.pbProPic.Size = new System.Drawing.Size(35, 35);
             // 
             // lnkFullName
             // 
-            this.lnkFullName.Location = new System.Drawing.Point(-1823, 16);
+            this.lnkFullName.Location = new System.Drawing.Point(189, 8);
             // 
             // lblTime
             // 
@@ -63,7 +73,7 @@
             // 
             // lblUsername
             // 
-            this.lblUsername.Location = new System.Drawing.Point(-1820, 42);
+            this.lblUsername.Location = new System.Drawing.Point(192, 8);
             // 
             // CCard
             // 
@@ -82,15 +92,20 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(398, 643);
             this.CloseStyle = MyUC.Forms.frmScreen.enCloseStyle.Back;
             this.Controls.Add(this.CCard);
             this.MinimumSize = new System.Drawing.Size(398, 643);
+            this.Mode = MyUC.Forms.frmScreen.enMode.Normal;
             this.Name = "frmClientCard";
             this.RestoreButton = false;
             this.Text = "frmClientCard";
             this.TimeSynchronization = false;
+            this.UsernameVisibility = false;
             this.Controls.SetChildIndex(this.PnlHead, 0);
+            this.Controls.SetChildIndex(this.pnlSide, 0);
+            this.Controls.SetChildIndex(this.pnlMenu, 0);
             this.Controls.SetChildIndex(this.CCard, 0);
             this.PnlHead.ResumeLayout(false);
             this.PnlHead.PerformLayout();

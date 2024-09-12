@@ -56,17 +56,22 @@
             // 
             // pbProPic
             // 
-            this.pbProPic.Location = new System.Drawing.Point(-2582, 0);
+            this.pbProPic.Location = new System.Drawing.Point(137, 1);
+            this.pbProPic.Size = new System.Drawing.Size(35, 35);
             // 
             // lnkFullName
             // 
-            this.lnkFullName.Location = new System.Drawing.Point(-1080, 26);
+            this.lnkFullName.Location = new System.Drawing.Point(175, 8);
             // 
             // lblTime
             // 
             this.lblTime.ForeColor = System.Drawing.Color.Black;
             this.lblTime.Location = new System.Drawing.Point(252, 8);
-            this.lblTime.Text = "8:01 AM";
+            this.lblTime.Text = "2:47 PM";
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.Location = new System.Drawing.Point(178, 8);
             // 
             // chkRemember
             // 
@@ -173,7 +178,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(235)))));
             this.ClientSize = new System.Drawing.Size(369, 489);
             this.Controls.Add(this.btnRemembered);
             this.Controls.Add(this.txtPassword);
@@ -181,17 +186,19 @@
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.chkRemember);
             this.FormBtnsColor = MyUC.Forms.frmScreen.enBtnColor.Black;
+            this.Mode = MyUC.Forms.frmScreen.enMode.Normal;
             this.Name = "frmLogin";
+            this.UsernameVisibility = false;
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.Controls.SetChildIndex(this.PnlHead, 0);
-            this.Controls.SetChildIndex(this.pbBackGraghics, 0);
             this.Controls.SetChildIndex(this.chkRemember, 0);
             this.Controls.SetChildIndex(this.btnLogin, 0);
             this.Controls.SetChildIndex(this.txtUsername, 0);
             this.Controls.SetChildIndex(this.txtPassword, 0);
-            this.Controls.SetChildIndex(this.pbBanklogo, 0);
             this.Controls.SetChildIndex(this.lnkMadeBy, 0);
             this.Controls.SetChildIndex(this.btnRemembered, 0);
+            this.Controls.SetChildIndex(this.pbBackGraghics, 0);
+            this.Controls.SetChildIndex(this.pbBanklogo, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbBackGraghics)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBanklogo)).EndInit();
             this.PnlHead.ResumeLayout(false);

@@ -48,7 +48,7 @@
             // 
             // PnlHead
             // 
-            this.PnlHead.BackColor = System.Drawing.Color.Transparent;
+            this.PnlHead.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(251)))));
             this.PnlHead.Size = new System.Drawing.Size(645, 35);
             this.PnlHead.Controls.SetChildIndex(this.pbStar, 0);
             this.PnlHead.Controls.SetChildIndex(this.pbProPic, 0);
@@ -59,7 +59,6 @@
             // pbProPic
             // 
             this.pbProPic.Location = new System.Drawing.Point(266, 1);
-            this.pbProPic.Size = new System.Drawing.Size(35, 35);
             // 
             // lnkFullName
             // 
@@ -136,11 +135,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(645, 629);
             this.CloseStyle = MyUC.Forms.frmScreen.enCloseStyle.Back;
             this.Controls.Add(this.btnForget);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.UCard);
+            this.Mode = MyUC.Forms.frmScreen.enMode.Normal;
             this.Name = "frmUserCard";
             this.RestoreButton = false;
             this.Text = "frmUserCard";
